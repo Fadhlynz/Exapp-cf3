@@ -27,9 +27,9 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group mb-3">
-                                    <label for="description" class="form-label">Description</label>
+                                    {{--  <label for="description" class="form-label">Description</label>
                                     <textarea class="form-control" id="description" name="description" rows="3"
-                                        required></textarea>
+                                        required></textarea>  --}}
                                 </div>
                             </div>
                             <table class="table table-sm">

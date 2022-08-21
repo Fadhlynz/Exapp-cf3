@@ -24,14 +24,14 @@ class DashboardController extends Controller
             'count_hypotesis' => Hama::count(),
             'count_history' => Kondisihama::count(),
             'histores' => Hasilhama::orderby('id','desc')->get(),
-            'history' => Hasilhama::all(),
             'hypotesis' => Hama::all(),
+            'history' => Hasilhama::all(),
         ]);
     }
 
     public function home()
     {
-        return view('home',[
+        return view('index',[
             'title' => 'Home',
             'setting' => Setting::find(1),
         ]);

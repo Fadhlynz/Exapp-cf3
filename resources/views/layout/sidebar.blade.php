@@ -40,9 +40,9 @@
                             <li class="submenu-item {{ $title == 'Gejala Hama' ? 'active' : '' }} ">
                                 <a href="{{ route('gejalahama.index') }}">Gejala Hama</a>
                             </li>
-                            <li class="submenu-item {{ $title == 'Kondisi Hama' ? 'active' : '' }} ">
+                            {{-- <li class="submenu-item {{ $title == 'Kondisi Hama' ? 'active' : '' }} ">
                                 <a href="{{ route('kondisihama.index') }}">Kondisi Hama</a>
-                            </li>
+                            </li> --}}
                             <li class="submenu-item {{ $title == 'Rules Hama' ? 'active' : '' }} ">
                                 <a href="{{ route('rules.hama') }}">Rules Hama</a>
                             </li>
@@ -62,9 +62,9 @@
                             <li class="submenu-item {{ $title == 'Gejala Penyakit' ? 'active' : '' }} ">
                                 <a href="{{ route('gejalapenyakit.index') }}">Gejala Penyakit</a>
                             </li>
-                            <li class="submenu-item {{ $title == 'Kondisi Penyakit' ? 'active' : '' }} ">
+                            {{-- <li class="submenu-item {{ $title == 'Kondisi Penyakit' ? 'active' : '' }} ">
                                 <a href="{{ route('kondisipenyakit.index') }}">Kondisi Penyakit</a>
-                            </li>
+                            </li> --}}
                             <li class="submenu-item {{ $title == 'Rules Penyakit' ? 'active' : '' }} ">
                                 <a href="{{ route('rules.penyakit') }}">Rules Penyakit</a>
                             </li>

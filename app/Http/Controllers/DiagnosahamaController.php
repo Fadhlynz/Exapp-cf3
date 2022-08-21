@@ -8,11 +8,12 @@ use App\Models\Hasilhama;
 use App\Models\Kondisihama;
 use App\Models\Ruleshama;
 use App\Models\Setting;
+use App\Models\Value;
 use Illuminate\Http\Request;
 
 class DiagnosahamaController extends Controller
 {
-    public function diagnosa_hama()
+    public function diagnosa_hama() 
     {
         $evidences = Gejalahama::all();
 
@@ -20,9 +21,9 @@ class DiagnosahamaController extends Controller
             'title' => 'Diagnosa Hama',
             'evidences' => $evidences,
             'setting_type_input' => Setting::find(1),
-            'values' => Kondisihama::orderby('value','asc')->get(),
-            'min' => Kondisihama::where('value', 0)->first(),
-            'max' => Kondisihama::where('value', 1)->first(),
+            'values' => Value::orderby('value','asc')->get(),
+            'min' => Value::where('value', 0)->first(),
+            'max' => Value::where('value', 1)->first(),
         ]);
     }
 
@@ -69,17 +70,30 @@ class DiagnosahamaController extends Controller
                         $datagejalahama[] = array(
                             'gejala' => $role->gejalahama_id,
                         );
-                        
                         // Data Kondisi
                         $datakondisihama[] = array(
-                            'cf_pakar' => $role->value,
+                          'cf_pakar' => $role->value,
                             'cf_user' => $request->evidance_value[$ard],
                         );
-
+                        
+                      }
                     }
-                }
             }
         }
+        foreach($roles as $sd => $rule){
+          $arrid = 0;
+           $ard = $arrid++;
+             if ($request->evidance_value[$ard] != 0){
+             $rule->gejahalama_id;
+
+             // Data Gejala
+             $gejalas[] = array(
+             'gejalas' => $rule->gejalahama_id,
+             );
+            }
+          }
+          dd($gejalas);
+        die;
 
         // Get Data to Hasil Diagnosa
         foreach ($hypothesyes as $hypothesis){
@@ -127,7 +141,7 @@ class DiagnosahamaController extends Controller
         Hasilhama::create([
             'hama_id' => $a,
             'name' => $request->name,
-            'description' => $request->description,
+            'description' => "Data Hama",
             'hama' => $inhama,
             'gejalahama' => $ingejalahama,
             'kondisihama' => $inkondisihama,

@@ -8,6 +8,7 @@ use App\Models\Kondisipenyakit;
 use App\Models\Penyakit;
 use App\Models\Rulespenyakit;
 use App\Models\Setting;
+use App\Models\Value;
 use Illuminate\Http\Request;
 
 class DiagnosapenyakitController extends Controller
@@ -20,9 +21,9 @@ class DiagnosapenyakitController extends Controller
             'title' => 'Diagnosa Penyakit',
             'evidences' => $evidences,
             'setting_type_input' => Setting::find(1),
-            'values' => Kondisipenyakit::orderby('value','asc')->get(),
-            'min' => Kondisipenyakit::where('value', 0)->first(),
-            'max' => Kondisipenyakit::where('value', 1)->first(),
+            'values' => Value::orderby('value','asc')->get(),
+            'min' => Value::where('value', 0)->first(),
+            'max' => Value::where('value', 1)->first(),
         ]);
      }
 
@@ -76,7 +77,7 @@ class DiagnosapenyakitController extends Controller
         Hasilpenyakit::create([
             'penyakit_id' => $a,
             'name' => $request->name,
-            'description' => $request->description,
+            'description' => "Data Penyakit",
             'value' => $b,
         ]);
 

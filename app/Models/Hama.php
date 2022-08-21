@@ -19,7 +19,7 @@ class Hama extends Model
 
       public function history(){
         return $this->hasMany(Hasilhama::class);
-      }
+      } 
 
      public function ruleshamas(){
      return $this->hasMany(Ruleshama::class);

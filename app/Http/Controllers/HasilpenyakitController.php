@@ -13,7 +13,7 @@ class HasilpenyakitController extends Controller
         return view('riwayatdiagnosa.penyakit',[
             'title' => 'Riwayat Diagnosa Penyakit',
             'histores' => Hasilpenyakit::orderby('id','desc')->get(),
-            'hypotesis' => Penyakit::all(),
+            'hypotesis' => Penyakit::all(), 
             'history' => Hasilpenyakit::all(),
         ]);
     }

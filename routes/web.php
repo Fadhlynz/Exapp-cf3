@@ -65,7 +65,7 @@ Route::group(['middleware' => ['level:admin,user', 'auth']], function () {
 
 Route::group(['middleware' => ['level:admin', 'auth']], function () {
   Route::resource('/user', UserController::class);
-});
+}); 
 
 Route::middleware(['guest'])->group(function () {
   Route::get('/login', [DashboardController::class, 'login'])->name('login');

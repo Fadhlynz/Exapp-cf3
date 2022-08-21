@@ -8,12 +8,12 @@
                     <h4 class="card-title">Riwayat Diagnosa Hama</h4>
                 </div>
                 <div class="card-body">
-                  @if (session('status'))
-                      <div class="alert alert-success alert-dismissible show fade">
-                          {{ session('status') }}
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                  @endif
+                    @if (session('status'))
+                        <div class="alert alert-success alert-dismissible show fade">
+                            {{ session('status') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="data-tab" data-bs-toggle="tab" href="#data" role="tab"
@@ -120,11 +120,7 @@
                     backgroundColor: chartColors.blue,
                     data: [
                         @foreach ($hypotesis as $hypo)
-                            {
-                                {
-                                    $history - > where('hama_id', $hypo - > id) - > count()
-                                }
-                            },
+                            {{ $history->where('hama_id', $hypo->id)->count() }},
                         @endforeach
                     ]
                 }]
