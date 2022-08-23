@@ -116,8 +116,49 @@
     <script src="{{ asset('mazer/js/pages/dashboard.js')}}"></script> --}}
 
     <script src="{{ asset('mazer/js/main.js') }}"></script>
+    <script src="{{ asset('mazer/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('mazer/vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>
 
+    <script>
+        // Hapus Data Hasil Hama
+        $(document).on('click', '.hapus-hasilhama', function(e) {
+            var form = $(this).closest("form");
+            var name = $(this).data("name");
+            e.preventDefault();
+            Swal.fire({
+                title: 'Apakah Anda Yakin?',
+                text: "Data Hasil Diagnosa!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus Data!'
+            }).then((result) => {
+                if (result) {
+                    form.submit();
+                }
+            })
+        });
+        // Hapus Data Hasil Penyakit
+        $(document).on('click', '.hapus-hasilpenyakit', function(e) {
+            var form = $(this).closest("form");
+            var name = $(this).data("name");
+            e.preventDefault();
+            Swal.fire({
+                title: 'Apakah Anda Yakin?',
+                text: "Data Hasil Diagnosa!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus Data!'
+            }).then((result) => {
+                if (result) {
+                    form.submit();
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

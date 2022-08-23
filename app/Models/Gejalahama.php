@@ -17,4 +17,9 @@ class Gejalahama extends Model
     public function ruleshamas(){
         return $this->hasMany(Ruleshama::class);
     }
+
+    public function penyakits()
+    {
+    return $this->belongsToMany(Penyakit::class)->withPivot('value');
+    }
 }

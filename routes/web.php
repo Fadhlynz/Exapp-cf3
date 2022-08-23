@@ -78,7 +78,7 @@ Route::get('/post', [PostController::class, 'index'])->name('post-keterangan');
 
   // Route Diagnosa Hama
   Route::get('/diagnosa-hama', [DiagnosahamaController::class, 'diagnosa_hama'])->name('diagnosa-hama');
-  Route::post('/diagnosa-hama', [DiagnosahamaController::class, 'hasildiagnosa_hama'])->name('hasil-diagnosahama');
+  Route::post('/diagnosa-hama', [DiagnosahamaController::class, 'diagnosa'])->name('hasil-diagnosahama');
 
   // Route Diagnosa Penyakit
   Route::get('/diagnosa-penyakit', [DiagnosapenyakitController::class, 'diagnosa_penyakit'])->name('diagnosa-penyakit');
