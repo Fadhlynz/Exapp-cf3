@@ -22,4 +22,5 @@ class Ruleshama extends Model
      public function gejalahama(){
       return $this->belongsTo(Gejalahama::class);
      }
+     
 }

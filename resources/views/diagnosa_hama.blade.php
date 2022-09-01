@@ -53,6 +53,7 @@
                                                 </td>
                                                 <td class="align-middle" style="width: 30%">
                                                     <select class="form-select" name="diagnosa[]">
+                                                      <option value="" selected>--Silahkan Pilih--</option>
                                                         @foreach ($kondisihamas as $kondisihama)
                                                             <option value="{{ $gejalahama->id }}+{{ $kondisihama->value }}">
                                                                 {{ $kondisihama->name }}

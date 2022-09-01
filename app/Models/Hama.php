@@ -24,4 +24,9 @@ class Hama extends Model
      public function ruleshamas(){
      return $this->hasMany(Ruleshama::class);
      }
+
+      public function gejalas()
+    {
+        return $this->belongsToMany(Gejalahama::class)->withPivot('value_cf');
+    }
 }

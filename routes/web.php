@@ -66,7 +66,7 @@ Route::group(['middleware' => ['level:admin,user', 'auth']], function () {
 Route::group(['middleware' => ['level:admin', 'auth']], function () {
   Route::resource('/user', UserController::class);
 }); 
-
+ 
 Route::middleware(['guest'])->group(function () {
   Route::get('/login', [DashboardController::class, 'login'])->name('login');
   Route::post('/login-process', [DashboardController::class, 'login_process'])->name('login_process');
@@ -87,5 +87,5 @@ Route::get('/post', [PostController::class, 'index'])->name('post-keterangan');
 
     // Route Hasil Diagnosa  
   Route::get('/hasil-hama', [HasilhamaController::class, 'index'])->name('riwayatdiagnosa-hama');
-  Route::get('/hasil-hama/{hama}', [HasilhamaController::class, 'hasildiagnosa_hama'])->name('hasil-hama');
+  Route::get('/hasil-hama/{hama}', [HasilhamaController::class, 'show'])->name('hasil-hama');
   Route::delete('/hasil-hama/{hama}', [HasilhamaController::class, 'destroy'])->name('hapus-hasilhama');

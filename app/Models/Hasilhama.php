@@ -7,23 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hasilhama extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-        'hama_id',
-        'name',
-        'description',
-        'hama',
-        'gejalahama',
-        'kondisihama',
-        'value',
-    ];
+   protected $fillable = [
+   'nama',
+   'hasil_diagnosa',
+   'cf_max',
+   'gejala_terpilih',
+   'file_pdf'
+   ];
 
-    public function hama(){
-        return $this->belongsTo(Hama::class);
-    }
-
-    public function gejalahama(){
-      return $this->belongsTo(Gejalahama::class);
-     }
+   public function hama()
+   {
+   return $this->belongsTo(Hama::class);
+   }
 }
