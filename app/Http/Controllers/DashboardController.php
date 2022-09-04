@@ -32,7 +32,7 @@ class DashboardController extends Controller
     public function home()
     {
         return view('index',[
-            'title' => 'Home',
+            'title' => 'Sipagung - Sistem Pakar Diagnosa Hama & Penyakit Jagung',
             'setting' => Setting::find(1),
         ]);
     }
