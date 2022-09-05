@@ -73,6 +73,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::get('/', [DashboardController::class, 'home'])->name('home');
+Route::get('/about', [DashboardController::class, 'about'])->name('about');
 // Route Post
 Route::get('/post', [PostController::class, 'index'])->name('post-keterangan');
 

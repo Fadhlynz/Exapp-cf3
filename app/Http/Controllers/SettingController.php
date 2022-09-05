@@ -12,7 +12,7 @@ class SettingController extends Controller
     public function index()
     {
         // dd(Setting::where('id', 1)->get());
-        return view('setting',[
+        return view('setting',[ 
             'title' => 'Setting',
             'setting' => Setting::find(1),
             'values' => Value::orderby('value', 'asc')->get(),

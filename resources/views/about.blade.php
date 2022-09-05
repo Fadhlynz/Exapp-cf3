@@ -28,30 +28,28 @@
         </div>
     </header><!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero d-flex align-items-center">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about mt-5">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with
-                        Bootstrap</h2>
-                    <div data-aos="fade-up" data-aos-delay="600">
-                        <div class="text-center text-lg-start">
-                            <a href="#about"
-                                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>Mulai Diagnosa</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+        <div class="container" data-aos="fade-up">
+            <div class="row gx-0">
+
+
+                @foreach ($settings as $row)
+                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2>{{ $row->title }}</h2>
+                            <p>
+                                <?php echo $row->description; ?></p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('flex-start/img/farmer.png') }}" class="img-fluid" alt="">
-                </div>
+
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="{{ asset('flex-start/img/about.jpg') }}" class="img-fluid" alt="">
+                    </div>
+                @endforeach
             </div>
         </div>
 
-    </section><!-- End Hero -->
+    </section><!-- End About Section -->
 @endsection

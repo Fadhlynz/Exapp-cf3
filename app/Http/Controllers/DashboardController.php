@@ -35,6 +35,14 @@ class DashboardController extends Controller
             'title' => 'Sipagung - Sistem Pakar Diagnosa Hama & Penyakit Jagung',
             'setting' => Setting::find(1),
         ]);
+    } 
+ 
+    public function about()
+    {
+        return view('about',[
+            'title' => 'Sipagung About - Sistem Pakar Diagnosa Hama & Penyakit Jagung',
+            'settings' => Setting::orderby('id', 'asc')->get()
+        ]);
     }
 
     public function login()

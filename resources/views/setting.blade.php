@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input type="text" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title',$setting->title) }}" id="title" name="title" required>
-                                        @error('title')
+                                        @error('title') 
                                         <div class="invalid-feedback">
                                             <i class="bx bx-radio-circle"></i>
                                             {{ $message }}.
