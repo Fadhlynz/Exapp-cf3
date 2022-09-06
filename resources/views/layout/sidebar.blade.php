@@ -161,12 +161,12 @@
                             <span>Post Keterangan</span>
                         </a>
                     </li>
-                    <li class="sidebar-item {{ $title == 'Login' ? 'active' : '' }} ">
+                    {{--  <li class="sidebar-item {{ $title == 'Login' ? 'active' : '' }} ">
                         <a href="/login" class='sidebar-link'>
                             <i class="bi bi-box-arrow-in-left"></i>
                             <span>Login</span>
                         </a>
-                    </li>
+                    </li>  --}}
                 @endif
 
 

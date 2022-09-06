@@ -8,6 +8,7 @@ use App\Models\Hasilhama;
 use App\Models\Riwayathama;
 use App\Models\Ruleshama;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HasilhamaController extends Controller
 {
@@ -30,9 +31,14 @@ class HasilhamaController extends Controller
         ]);
     }
 
-    public function destroy($id)
+    public function destroy(Hasilhama $hasilhama)
     {
-    Hasilhama::where('id',$id)->delete();
-    return redirect()->route('riwayatdiagnosa-hama')->with('status', 'Data Berhasil Dihapus!');
+      Hasilhama::destroy($hasilhama->id);
+      $destination = 'storage/downloads' . $hasilhama->file_pdf;
+      if (File::exists($destination)) {
+      File::delete($destination);
+      }
+      Hasilhama::where('id',$hasilhama->id)->delete();
+      return redirect()->route('riwayatdiagnosa-hama')->with('status', 'Data Berhasil Dihapus!');
     }
 }

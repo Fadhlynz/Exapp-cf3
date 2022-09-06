@@ -8,13 +8,28 @@ use Illuminate\Http\Request;
 
 class HasilpenyakitController extends Controller
 {
-    public function index()
-    {
-        return view('riwayatdiagnosa.penyakit',[
-            'title' => 'Riwayat Diagnosa Penyakit',
-            'histores' => Hasilpenyakit::orderby('id','desc')->get(),
-            'hypotesis' => Penyakit::all(), 
-            'history' => Hasilpenyakit::all(),
-        ]);
-    }
+      public function index()
+      {
+      $riwayat = Hasilpenyakit::with('penyakit') 
+      ->latest()
+      ->paginate(10);
+      return view('riwayatdiagnosa.penyakit', [
+      'title' => 'Riwayat Diagnosa penyakit',
+      'riwayats' => $riwayat,
+      ]);
+      } 
+
+      public function show($id)
+      {
+      return view('riwayatdiagnosa.hasil_penyakit', [
+      'title' => 'Riwayat Hasil Diagnosa Penyakit',
+      'riwayat' => Hasilpenyakit::find($id)
+      ]);
+      }
+
+      public function destroy($id)
+      {
+      Hasilpenyakit::where('id',$id)->delete();
+      return redirect()->route('riwayatdiagnosa-penyakit')->with('status', 'Data Berhasil Dihapus!');
+      }
 }

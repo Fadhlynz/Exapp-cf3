@@ -42,37 +42,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($evidences as $evidence)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $evidence->code }}</td>
-                                        <td>
-                                            {{ $evidence->name }}
-                                            <input type="hidden" id="in_id_evidence-{{ $evidence->id }}"
-                                                name="id_evidence[]" value="{{ $evidence->id }}">
-                                        </td>
-                                        <td class="align-middle" style="width: 30%">
-                                            @if ($setting_type_input->input_type == 'range')
-                                            <input class="w-100" type="range" type="range" id="rng-{{ $evidence->id }}"
-                                                min="0" max="{{ $values->count() - 1 }}" value="0">
-                                            <input type="hidden" id="in_val_evidence-{{ $evidence->id }}"
-                                                name="evidance_value[]" value="">
-                                            <div class="d-flex justify-content-between">
-                                                <span>{{ $min->name }}</span>
-                                                <span id="rngOutput-{{ $evidence->id }}">{{ $evidence->value }}</span>
-                                                <span>{{ $max->name }}</span>
-                                            </div>
-                                            @elseif ($setting_type_input->input_type == 'select')
-                                            <select class="form-select" name="evidance_value[]" id="basicSelect">
-                                                @foreach ($values as $value)
-                                                <option value="{{ $value->value }}">{{ $value->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            @endif
-
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                   @foreach ($gejalas as $gejalapenyakit)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $gejalapenyakit->code }}</td>
+                                                <td>
+                                                    {{ $gejalapenyakit->name }}
+                                                    <input type="hidden" id="in_id_evidence-{{ $gejalapenyakit->id }}"
+                                                        name="id_evidence[]" value="{{ $gejalapenyakit->id }}">
+                                                </td>
+                                                <td class="align-middle" style="width: 30%">
+                                                    <select class="form-select" name="diagnosa[]">
+                                                      <option value="" selected>--Silahkan Pilih--</option>
+                                                        @foreach ($kondisipenyakits as $kondisipenyakit)
+                                                            <option value="{{ $gejalapenyakit->id }}+{{ $kondisipenyakit->value }}">
+                                                                {{ $kondisipenyakit->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
                             <div class="col-12 d-flex justify-content-end">
@@ -91,70 +81,4 @@
         </div>
     </section>
 </div>
-@foreach ($evidences as $evidence)
-<script>
-var rng_ {
-    {
-        $evidence - > id
-    }
-} = document.getElementById("rng-{{ $evidence->id }}");
-var ro_ {
-    {
-        $evidence - > id
-    }
-} = document.getElementById("rngOutput-{{ $evidence->id }}");
-var in_val_evidence_ {
-    {
-        $evidence - > id
-    }
-} = document.getElementById("in_val_evidence-{{ $evidence->id }}");
-var myRange_ {
-    {
-        $evidence - > id
-    }
-} = [
-    @foreach($values as $value) {
-        {
-            $value - > value
-        }
-    },
-    @endforeach
-];
-
-function updateRange() {
-    ro_ {
-        {
-            $evidence - > id
-        }
-    }.textContent = myRange_ {
-        {
-            $evidence - > id
-        }
-    } [parseInt(rng_ {
-        {
-            $evidence - > id
-        }
-    }.value, 10)].toFixed(2) * 100 + '%';
-    in_val_evidence_ {
-        {
-            $evidence - > id
-        }
-    }.value = myRange_ {
-        {
-            $evidence - > id
-        }
-    } [parseInt(rng_ {
-        {
-            $evidence - > id
-        }
-    }.value, 10)].toFixed(2);
-};
-window.addEventListener("DOMContentLoaded", updateRange);
-rng_ {
-    {
-        $evidence - > id
-    }
-}.addEventListener("input", updateRange);
-</script>
-@endforeach
 @endsection

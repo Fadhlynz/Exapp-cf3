@@ -24,4 +24,8 @@ class Penyakit extends Model
     public function rulespenyakits(){
         return $this->hasMany(Rulespenyakit::class);
     }
+     public function gejalas()
+     {
+     return $this->belongsToMany(Gejalahama::class)->withPivot('value_cf');
+     }
 }

@@ -4,90 +4,186 @@ namespace App\Http\Controllers;
 
 use App\Models\Gejalapenyakit;
 use App\Models\Hasilpenyakit;
-use App\Models\Kondisipenyakit;
-use App\Models\Penyakit;
-use App\Models\Rulespenyakit;
-use App\Models\Setting;
 use App\Models\Value;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class DiagnosapenyakitController extends Controller
 {
      public function diagnosa_penyakit()
      {
-        $evidences = Gejalapenyakit::all();
-
-        return view('diagnosa_penyakit',[
-            'title' => 'Diagnosa Penyakit',
-            'evidences' => $evidences,
-            'setting_type_input' => Setting::find(1),
-            'values' => Value::orderby('value','asc')->get(),
-            'min' => Value::where('value', 0)->first(),
-            'max' => Value::where('value', 1)->first(),
-        ]);
+          $gejalas = Gejalapenyakit::all();
+          $kondisipenyakits = Value::all();
+          return view('diagnosa_penyakit',[
+          'title' => 'Diagnosa Penyakit',
+          'gejalas' => $gejalas,
+          'kondisipenyakits' => $kondisipenyakits
+          ]);
      }
 
-        public function hasildiagnosa_penyakit(Request $request){
+       public function tingkat_keyakinan($keyakinan)
+       {
+       switch ($keyakinan) {
+       case -0.8:
+       return 'Hampir pasti tidak';
+       break;
+       case -1:
+       return 'Pasti tidak';
+       break;
+       case -0.6:
+       return 'Kemungkinan besar tidak';
+       break;
+       case -0.4:
+       return 'Mungkin tidak';
+       break;
+       case 0.4:
+       return 'Mungkin';
+       break;
+       case 0.6:
+       return 'Sangat Mungkin';
+       break;
+       case 0.8:
+       return 'Hampir pasti';
+       break;
+       case 1:
+       return 'Pasti';
+       break;
+       }
+       }
 
-        $request->validate([
-            'name' => 'required',
-        ]); 
 
-        $hypothesyes = Penyakit::all();
-        $roles = Rulespenyakit::all();
-        $evidences = Gejalapenyakit::all();
+       public function kalkulasi_cf($data)
+       {
+       $data_penyakit = [];
+       $gejala_terpilih = [];
+       foreach($data['diagnosa'] as $input) {
+       if(!empty($input)) {
+       $opts = explode('+', $input);
+       $gejala = Gejalapenyakit::with('penyakits')->find($opts[0]);
 
-        foreach ($hypothesyes as $hypothesis){
-            $arrid = 0;
-            $cf_old = 0;
-            foreach ($roles as $key => $role){
-                if ($hypothesis->id == $role->penyakit_id ){
-                    $ard = $arrid++; 
-                    if ($request->evidance_value[$ard] != 0){
-                        $cfhe = $role->value * $request->evidance_value[$ard];
-                        $cf_old === 1 ? $cfhe : $cf_old = $cf_old + $cfhe * (1- $cf_old);
-                    }
-                }
-            }
-            $menu[] = array(
-                'id' => $hypothesis->id,
-                'nama' => $hypothesis->name,
-                'hsl' => number_format($cf_old * 100,2, '.', ''),
-                'slsi' => $hypothesis->srn_penyakit
-            );
-        }
+       foreach($gejala->penyakits as $penyakit) {
+       if(empty($data_penyakit[$penyakit->id])){
+       $data_penyakit[$penyakit->id] = [$penyakit, [$gejala, $opts[1], $penyakit->pivot->value]];
+       } else {
+       array_push($data_penyakit[$penyakit->id], [$gejala, $opts[1], $penyakit->pivot->value]);
+       }
 
-        $b = 0;
-        foreach ($menu as $index => $record) {
-            if ($record['hsl'] > $b) { 
-                $a = $record['id'];
-                $b = $record['hsl'];
-                $c = $record['nama'];
-                $d = $record['slsi'];
-            }
-        }
+       if(empty($gejala_terpilih[$gejala->id])) {
+       $gejala_terpilih[$gejala->id] = [
+       'nama' => $gejala->name,
+       'kode' => $gejala->code,
+       'cf_user' => $opts[1],
+       'keyakinan' => $this->tingkat_keyakinan($opts[1])
+       ];
+       }
+       }
+       }
+       }
 
-        if($b == 0){
-            return redirect()->back()->with('status', 'At least fill in one of the following!');
-        }
+       $hasil_diagnosa = [];
+       $cf_max = null;
+       foreach($data_penyakit as $final) {
+       if(count($final) < 3) { continue; } $cf1=null; $cf2=null; $cf_combine=0; $hasil_cf=null; foreach($final as $key=>
+           $value) {
+           if($key == 0) {
+           continue;
+           }
 
-        // dd($request->all());
-        // dd($a);
+           if($key == 1) {
+           $cf1 = $final[$key][2] * $final[$key][1];
+           } else {
+           if($cf_combine != 0) {
+           $cf1 = $cf_combine;
+           $cf2 = $final[$key][2] * $final[$key][1];
 
-        Hasilpenyakit::create([
-            'penyakit_id' => $a,
-            'name' => $request->name,
-            'description' => "Data Penyakit",
-            'value' => $b,
-        ]);
+           if($cf1 < 0 || $cf2 < 0) { $cf_combine=($cf1 + $cf2) / (1 - min($cf1, $cf2)); } else { $cf_combine=$cf1 +
+               ($cf2 * (1 - $cf1)); } $hasil_cf=$cf_combine; } else { $cf2=$final[$key][2] * $final[$key][1]; if($cf1 <
+               0 || $cf2 < 0) { $cf_combine=($cf1 + $cf2) / (1 - min($cf1, $cf2)); } else { $cf_combine=$cf1 + ($cf2 *
+               (1 - $cf1)); } $hasil_cf=$cf_combine; } } if(count($final) - 1==$key) { if($cf_max==null) {
+               $cf_max=[$hasil_cf, "{$final[0]->name} ({$final[0]->code})" , $final[0]->images ]; } else {
+               $cf_max=($hasil_cf> $cf_max[0])
+               ? [$hasil_cf, "{$final[0]->name} ({$final[0]->code})", $final[0]->images]
+               : $cf_max;
+               }
 
-        return view('hasildiagnosa_penyakit',[
-            'title' => 'Diagnosa Penyakit',
-            'hypothesyes' => $hypothesyes,
-            'roles' => $roles,
-            'evidences' => $evidences,
-            'request' => $request
-            ]
-        );
-    }
+               $hasil_diagnosa[$final[0]->id]['hasil_cf'] = $hasil_cf;
+
+               $cf1 = null;
+               $cf2 = null;
+               $cf_combine = 0;
+               $hasil_cf = null;
+               }
+
+
+
+               if(empty($hasil_diagnosa[$final[0]->id])) {
+               $hasil_diagnosa[$final[0]->id] = [
+               'nama_penyakit' => $final[0]->name,
+               'code_penyakit' => $final[0]->code,
+               'image_penyakit' => $final[0]->images,
+               'gejala' => [
+               [
+               'nama' => $final[$key][0]->name,
+               'code' => $final[$key][0]->code,
+               'cf_user' => $final[$key][1],
+               'cf_role' => $final[$key][2],
+               'hasil_perkalian' => $final[$key][2] * $final[$key][1]
+               ]
+               ]
+               ];
+               } else {
+               array_push($hasil_diagnosa[$final[0]->id]['gejala'], [
+               'nama' => $final[$key][0]->name,
+               'code' => $final[$key][0]->code,
+               'image' => $final[$key][0]->images,
+               'cf_user' => $final[$key][1],
+               'cf_role' => $final[$key][2],
+               'hasil_perkalian' => $final[$key][2] * $final[$key][1]
+               ]);
+               }
+               }
+               }
+
+               return [
+               'hasil_diagnosa' => $hasil_diagnosa,
+               'gejala_terpilih' => $gejala_terpilih,
+               'cf_max' => $cf_max
+               ];
+               }
+
+               public function diagnosa(Request $request)
+               {
+               $data = $request->all();
+
+               $result = $this->kalkulasi_cf($data);
+
+               $name = $request->name;
+
+               if($result['cf_max'] == null) {
+               return back()->with('status', 'Silahkan Pilih Salah Satu Kondisi dari Gejala Penyakit');
+               }
+
+               $riwayat = Hasilpenyakit::create([
+               'nama' => $request->name,
+               'hasil_diagnosa' => serialize($result['hasil_diagnosa']),
+               'cf_max' => serialize($result['cf_max']),
+               'gejala_terpilih' => serialize($result['gejala_terpilih'])
+               ]);
+
+               $path = public_path('storage/downloads');
+
+               if(!File::isDirectory($path)){
+               File::makeDirectory($path, 0777, true, true); 
+               }
+
+               $file_pdf = 'Diagnosapenyakit-'.$name.'-'.time().'.pdf';
+
+                  PDF::loadView('pdf.riwayat', ['id' => $riwayat->id])
+                  ->save($path."/".$file_pdf);
+
+                  $riwayat->update(['file_pdf' => $file_pdf]);
+
+               return redirect()->to(route('hasil-penyakit', $riwayat->id));
+               }
 }

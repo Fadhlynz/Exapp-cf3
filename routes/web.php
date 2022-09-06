@@ -84,9 +84,14 @@ Route::get('/post', [PostController::class, 'index'])->name('post-keterangan');
   // Route Diagnosa Penyakit
   Route::get('/diagnosa-penyakit', [DiagnosapenyakitController::class, 'diagnosa_penyakit'])->name('diagnosa-penyakit');
   Route::post('/diagnosa-penyakit', [DiagnosapenyakitController::class,
-  'hasildiagnosa_penyakit'])->name('hasil-diagnosapenyakit');
+  'diagnosa'])->name('hasil-diagnosapenyakit');
 
-    // Route Hasil Diagnosa  
+    // Route Hasil Diagnosa Hama
   Route::get('/hasil-hama', [HasilhamaController::class, 'index'])->name('riwayatdiagnosa-hama');
   Route::get('/hasil-hama/{hama}', [HasilhamaController::class, 'show'])->name('hasil-hama');
   Route::delete('/hasil-hama/{hama}', [HasilhamaController::class, 'destroy'])->name('hapus-hasilhama');
+
+  // Route Hasil Diagnosa Penyakit
+  Route::get('/hasil-penyakit', [HasilpenyakitController::class, 'index'])->name('riwayatdiagnosa-penyakit');
+  Route::get('/hasil-penyakit/{penyakit}', [HasilpenyakitController::class, 'show'])->name('hasil-penyakit');
+  Route::delete('/hasil-penyakit/{penyakit}', [HasilpenyakitController::class, 'destroy'])->name('hapus-hasilpenyakit');

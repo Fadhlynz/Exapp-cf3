@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Hasilpenyakit extends Model
-{
+{ 
     use HasFactory;
 
-     protected $fillable = [
-        'penyakit_id',
-        'name',
-        'description',
-        'value',
+    protected $fillable = [
+    'nama',
+    'hasil_diagnosa',
+    'cf_max',
+    'gejala_terpilih',
+    'file_pdf'
     ];
 
     public function penyakit(){

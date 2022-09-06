@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Gejalahama;
 use App\Models\Hasilhama;
 use App\Models\Value;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use PDF;
 
 
 class DiagnosahamaController extends Controller
@@ -178,6 +178,8 @@ class DiagnosahamaController extends Controller
     }
  
     $file_pdf = 'DiagnosaHama-'.$name.'-'.time().'.pdf';
+  
+    PDF::loadView('pdf.riwayat_hama', ['id' => $riwayat->id])->save($path."/".$file_pdf);
 
     $riwayat->update(['file_pdf' => $file_pdf]);
 
