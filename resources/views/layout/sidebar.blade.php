@@ -13,13 +13,13 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-item {{ $title == 'Home' ? 'active' : '' }} ">
-                    <a href="/" class='sidebar-link'>
-                        <i class="bi bi-house-door-fill"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
                 @if (auth()->check())
+                    <li class="sidebar-item {{ $title == 'Home' ? 'active' : '' }} ">
+                        <a href="/" class='sidebar-link'>
+                            <i class="bi bi-house-door-fill"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
                     <li class="sidebar-item {{ $title == 'Dashboard' ? 'active' : '' }} ">
                         <a href="/dashboard" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
@@ -161,12 +161,12 @@
                             <span>Post Keterangan</span>
                         </a>
                     </li>
-                    {{--  <li class="sidebar-item {{ $title == 'Login' ? 'active' : '' }} ">
+                    {{-- <li class="sidebar-item {{ $title == 'Login' ? 'active' : '' }} ">
                         <a href="/login" class='sidebar-link'>
                             <i class="bi bi-box-arrow-in-left"></i>
                             <span>Login</span>
                         </a>
-                    </li>  --}}
+                    </li> --}}
                 @endif
 
 

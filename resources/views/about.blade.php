@@ -19,6 +19,15 @@
                             <li><a target="_blank" href="{{ route('diagnosa-penyakit') }}">Diagnosa Penyakit</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown"><a href="#"><span>Riwayat Diagnosa</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a target="_blank" href="{{ route('riwayatdiagnosa-hama') }}">Riwayat Diagnosa Hama</a></li>
+                            <li><a target="_blank" href="{{ route('riwayatdiagnosa-penyakit') }}">Riwayat Diagnosa
+                                    Penyakit</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="{{ route('post-keterangan') }}">Post Keterangan</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('about') }}">About</a></li>
                     <li><a class="getstarted scrollto" href="{{ route('login') }}">Login</a></li>
                 </ul>

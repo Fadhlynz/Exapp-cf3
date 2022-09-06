@@ -54,7 +54,7 @@ class HamaController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'code' => 'required|max:255|unique:hamas',
             'name' => 'required|max:255',
             'det_hama' => 'required',
@@ -134,7 +134,7 @@ class HamaController extends Controller
 
         $hama = Hama::find($id);
 
-         if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
           $destination = 'images/hama/' . $hama->images;
           if (File::exists($destination)) {
             File::delete($destination);
@@ -143,7 +143,7 @@ class HamaController extends Controller
           $extention = $images->getClientOriginalExtension();
           $imageName = time() . '.' . $extention;
           $images->move(public_path('images/hama/'), $imageName);
-         }
+        }
 
         Hama::where('id', $id)->update([
             'name' => $request->name,
@@ -161,14 +161,15 @@ class HamaController extends Controller
      * @param  \App\Models\Hama  $hama
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Hama $hama)
     {
-         Hama::destroy($hama->id);
-         $destination = 'images/hama/' . $hama->images;
-         if (File::exists($destination)) {
-          File::delete($destination);
-         }
-        Ruleshama::where('gejalahama_id', $hama->id)->delete();
-        return redirect()->route('hama.index')->with('status', 'Data Berhasil Dihapus!');
+        Hama::destroy($hama->id);
+        $destination = 'images/hama/' . $hama->images;
+        if (File::exists($destination)) {
+        File::delete($destination);
+        }
+      Ruleshama::where('gejalahama_id', $hama->id)->delete();
+      return redirect()->route('hama.index')->with('status', 'Data Berhasil Dihapus!');
     }
 }

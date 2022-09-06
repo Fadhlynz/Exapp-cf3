@@ -4,12 +4,10 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
             <a href="{{ route('home') }}" class="logo d-flex align-items-center">
                 <img src="{{ asset('flex-start/img/logo.png') }}" alt="">
                 <span>Sipagung</span>
             </a>
-
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
@@ -19,6 +17,15 @@
                             <li><a target="_blank" href="{{ route('diagnosa-penyakit') }}">Diagnosa Penyakit</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown"><a href="#"><span>Riwayat Diagnosa</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a target="_blank" href="{{ route('riwayatdiagnosa-hama') }}">Riwayat Diagnosa Hama</a></li>
+                            <li><a target="_blank" href="{{ route('riwayatdiagnosa-penyakit') }}">Riwayat Diagnosa
+                                    Penyakit</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="{{ route('post-keterangan') }}">Post Keterangan</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('about') }}">About</a></li>
                     <li><a class="getstarted scrollto" href="{{ route('login') }}">Login</a></li>
                 </ul>
@@ -37,7 +44,7 @@
                         hama maupun penyakit pada tanaman Jagung</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="text-center text-lg-start">
-                            <a href="#about"
+                            <a target="_blank" href="{{ route('diagnosa-hama') }}"
                                 class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>Mulai Diagnosa</span>
                                 <i class="bi bi-arrow-right"></i>
