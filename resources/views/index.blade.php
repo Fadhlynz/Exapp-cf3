@@ -24,13 +24,11 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
         </div>
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero d-flex align-items-center">
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -52,6 +50,5 @@
                 </div>
             </div>
         </div>
-
     </section><!-- End Hero -->
 @endsection
