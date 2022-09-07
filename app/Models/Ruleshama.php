@@ -9,6 +9,8 @@ class Ruleshama extends Model
 {
     use HasFactory;
 
+     protected $table = 'gejalahama_hama';
+
      protected $fillable = [
       'hama_id',
       'gejalahama_id',

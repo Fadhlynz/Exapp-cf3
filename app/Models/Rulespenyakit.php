@@ -9,6 +9,8 @@ class Rulespenyakit extends Model
 {
     use HasFactory;
 
+    protected $table = 'gejalapenyakit_penyakit';
+
      protected $fillable = [
         'penyakit_id',
         'gejalapenyakit_id',

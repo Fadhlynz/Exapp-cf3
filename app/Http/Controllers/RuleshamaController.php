@@ -20,7 +20,7 @@ class RuleshamaController extends Controller
           'values' => Kondisihama::orderby('value','desc')->get(),
           'min' => Kondisihama::where('value', 0)->first(),
           'max' => Kondisihama::where('value', 1)->first(),
-        ]);
+        ]); 
      } 
 
      public function store(Request $request)

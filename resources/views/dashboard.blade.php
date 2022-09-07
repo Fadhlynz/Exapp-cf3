@@ -109,9 +109,12 @@
                                                 @forelse ($histores as $history)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $history->name }}</td>
-                                                        <td class="text-end">{{ $history->value }} %</td>
-                                                        <td>{{ date_format($history->created_at, 'd/m/Y') }}</td>
+                                                        <td>{{ $history->nama }}</td>
+                                                        <td class="text-end">{{ unserialize($history->cf_max)[1] }}
+                                                            <b>(<span
+                                                                    class="text-danger">{{ number_format(unserialize($history->cf_max)[0] * 100, 2) }}%</span>)</b>
+                                                        </td>
+                                                        <td>{{ $history->created_at->format('d M Y, H:m:s') }}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
@@ -177,7 +180,7 @@
                     ],
                     data: [
                         @foreach ($hypotesis as $hypo)
-                            {{ $history->where('hama_id', $hypo->id)->count() }},
+                            {{ $history->where('id', $hypo->id)->count() }},
                         @endforeach
                     ]
                 }]

@@ -4,7 +4,7 @@
     <div class="page-content">
         <section class="section">
             <div class="card">
-                <form action="{{ route('rules.store') }}"  method="post">
+                <form action="{{ route('ruleshama-store') }}" method="post">
                     @csrf
                     <div class="card-header">
                         <h4 class="card-title">{{ $title }}</h4>

@@ -14,12 +14,12 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 @if (auth()->check())
-                    <li class="sidebar-item {{ $title == 'Home' ? 'active' : '' }} ">
+                    {{-- <li class="sidebar-item {{ $title == 'Home' ? 'active' : '' }} ">
                         <a href="/" class='sidebar-link'>
                             <i class="bi bi-house-door-fill"></i>
                             <span>Home</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="sidebar-item {{ $title == 'Dashboard' ? 'active' : '' }} ">
                         <a href="/dashboard" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>

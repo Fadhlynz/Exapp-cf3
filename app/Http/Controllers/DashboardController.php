@@ -25,7 +25,7 @@ class DashboardController extends Controller
             'count_history' => Kondisihama::count(),
             'histores' => Hasilhama::orderby('id','desc')->get(),
             'hypotesis' => Hama::all(),
-            'history' => Hasilhama::all(),
+            'history' => Hasilhama::all(), 
         ]);
     }
 

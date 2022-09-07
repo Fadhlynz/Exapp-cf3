@@ -8,7 +8,7 @@ use App\Models\Rulespenyakit;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
-class RulespenyakitController extends Controller
+class RulespenyakitController extends Controller 
 {
       public function index()
       {
