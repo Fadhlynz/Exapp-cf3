@@ -10,7 +10,7 @@
 
 <body>
     @php
-        $riwayat = App\Models\Hasilhama::find($id);
+        $riwayat = App\Models\Hasilpenyakit::find($id);
     @endphp
 
     <p class="mb-4">
@@ -43,8 +43,8 @@
     @foreach (unserialize($riwayat->hasil_diagnosa) as $diagnosa)
         <div class="card card-body shadow-none p-0 mt-5 border">
             <div class="card-header bg-primary text-white p-2">
-                <h6 class="font-weight-bold">Tabel perhitungan hama: {{ $diagnosa['nama_hama'] }}
-                    ({{ $diagnosa['code_hama'] }})</h6>
+                <h6 class="font-weight-bold">Tabel perhitungan hama: {{ $diagnosa['nama_penyakit'] }}
+                    ({{ $diagnosa['code_penyakit'] }})</h6>
             </div>
             <table class="table table-hover">
                 <thead class="thead-light">
@@ -93,7 +93,7 @@
                     @php
                         $imge = unserialize($riwayat->cf_max)[3];
                     @endphp
-                    <img src="{{ base_path('images/hama/'.$imge) }}" width="250" height="120" alt="">
+                    <img src="{{ public_path('images/penyakit/$imge') }}" width="250" height="120" alt="">
                 </div>
             </div>
         </div>

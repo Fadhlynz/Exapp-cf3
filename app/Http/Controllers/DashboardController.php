@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Gejalahama;
 use App\Models\Hama;
 use App\Models\Hasilhama;
+use App\Models\Hasilpenyakit;
 use App\Models\User;
 use App\Models\History;
 use App\Models\Kondisihama;
+use App\Models\Penyakit;
 use App\Models\Setting;
-
+use App\Models\Value;
 
 class DashboardController extends Controller
 {
@@ -20,12 +22,13 @@ class DashboardController extends Controller
         return view('dashboard',[
             'title' => 'Dashboard',
             'count_user' => User::count(),
-            'count_evidence' => Gejalahama::count(),
-            'count_hypotesis' => Hama::count(),
-            'count_history' => Kondisihama::count(),
-            'histores' => Hasilhama::orderby('id','desc')->get(),
-            'hypotesis' => Hama::all(),
-            'history' => Hasilhama::all(), 
+            'count_hama' => Hama::count(),
+            'count_penyakit' => Penyakit::count(),
+            'count_value' => Value::count(),
+            'hasilhamas' => Hasilhama::orderby('id','desc')->get(),
+            'hamas' => Hama::all(),
+            'hasilpenyakits' => Hasilpenyakit::orderby('id','desc')->get(),
+            'penyakits' => Penyakit::all(),
         ]);
     }
 

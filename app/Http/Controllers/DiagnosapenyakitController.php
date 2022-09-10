@@ -24,38 +24,32 @@ class DiagnosapenyakitController extends Controller
 
        public function tingkat_keyakinan($keyakinan)
        {
-       switch ($keyakinan) {
-       case -0.8:
-       return 'Hampir pasti tidak';
-       break;
-       case -1:
-       return 'Pasti tidak';
-       break;
-       case -0.6:
-       return 'Kemungkinan besar tidak';
-       break;
-       case -0.4:
-       return 'Mungkin tidak';
-       break;
-       case 0.4:
-       return 'Mungkin';
-       break;
-       case 0.6:
-       return 'Sangat Mungkin';
-       break;
-       case 0.8:
-       return 'Hampir pasti';
-       break;
-       case 1:
-       return 'Pasti';
-       break;
-       }
+          switch ($keyakinan) {
+            case 0:
+            return 'Tidak Tahu';
+            break;
+            case 0.2:
+            return 'Tidak Yakin';
+            break;
+            case 0.4:
+            return 'Kurang Yakin';
+            break;
+            case 0.6:
+            return 'Cukup';
+            break;
+            case 0.8:
+            return 'Yakin';
+            break;
+            case 1:
+            return 'Sangat Yakin';
+            break;
+           }
        }
 
 
        public function kalkulasi_cf($data)
        {
-       $data_penyakit = [];
+       $data_penyakit = []; 
        $gejala_terpilih = [];
        foreach($data['diagnosa'] as $input) {
        if(!empty($input)) {
@@ -101,9 +95,10 @@ class DiagnosapenyakitController extends Controller
                ($cf2 * (1 - $cf1)); } $hasil_cf=$cf_combine; } else { $cf2=$final[$key][2] * $final[$key][1]; if($cf1 <
                0 || $cf2 < 0) { $cf_combine=($cf1 + $cf2) / (1 - min($cf1, $cf2)); } else { $cf_combine=$cf1 + ($cf2 *
                (1 - $cf1)); } $hasil_cf=$cf_combine; } } if(count($final) - 1==$key) { if($cf_max==null) {
-               $cf_max=[$hasil_cf, "{$final[0]->name} ({$final[0]->code})" , $final[0]->images ]; } else {
+               $cf_max=[$hasil_cf, $final[0]->id, "{$final[0]->name} ({$final[0]->code})", $final[0]->images ]; }
+               else {
                $cf_max=($hasil_cf> $cf_max[0])
-               ? [$hasil_cf, "{$final[0]->name} ({$final[0]->code})", $final[0]->images]
+               ? [$hasil_cf, $final[0]->id, "{$final[0]->name} ({$final[0]->code})", $final[0]->images]
                : $cf_max;
                }
 
@@ -146,6 +141,7 @@ class DiagnosapenyakitController extends Controller
                }
 
                return [
+                'id_penyakit' => $cf_max[1],
                'hasil_diagnosa' => $hasil_diagnosa,
                'gejala_terpilih' => $gejala_terpilih,
                'cf_max' => $cf_max
@@ -166,6 +162,7 @@ class DiagnosapenyakitController extends Controller
 
                $riwayat = Hasilpenyakit::create([
                'nama' => $request->name,
+               'id_penyakit' => $result['id_penyakit'],
                'hasil_diagnosa' => serialize($result['hasil_diagnosa']),
                'cf_max' => serialize($result['cf_max']),
                'gejala_terpilih' => serialize($result['gejala_terpilih'])
@@ -179,7 +176,7 @@ class DiagnosapenyakitController extends Controller
 
                $file_pdf = 'Diagnosapenyakit-'.$name.'-'.time().'.pdf';
 
-                  PDF::loadView('pdf.riwayat', ['id' => $riwayat->id])
+                  PDF::loadView('pdf.riwayat_penyakit', ['id' => $riwayat->id])
                   ->save($path."/".$file_pdf);
 
                   $riwayat->update(['file_pdf' => $file_pdf]);

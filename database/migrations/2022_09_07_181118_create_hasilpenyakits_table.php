@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('hasilpenyakits', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->integer('id_penyakit');
             $table->text('hasil_diagnosa');
             $table->text('cf_max');
             $table->text('gejala_terpilih');

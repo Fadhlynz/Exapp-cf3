@@ -4,10 +4,6 @@
     <div class="page-content">
         <section class="section">
             <h2>{{ $title }}</h2>
-            <p class="text-subtitle text-muted"> Bootstrap JavaScript modal plugin to add dialogs to your site
-                for lightboxes, user notifications, or completely
-                custom content</p>
-
             {{-- Data Hama --}}
             <div class="row">
                 <h3>Data Hama</h3>

@@ -48,9 +48,9 @@ Route::group(['middleware' => ['level:admin,user', 'auth']], function () {
 
   // Route Rules
   Route::get('/rules-hama', [RuleshamaController::class, 'index'])->name('rules.hama');
-  Route::post('/store-rules', [RuleshamaController::class, 'store'])->name('ruleshama-store');
+  Route::post('/store-ruleshama', [RuleshamaController::class, 'store'])->name('ruleshama.store');
   Route::get('/rules-penyakit', [RulespenyakitController::class, 'index'])->name('rules.penyakit');
-  Route::post('/store-rules', [RulespenyakitController::class, 'store'])->name('rulespenyakit-store');
+  Route::post('/store-rulespenyakit', [RulespenyakitController::class, 'store'])->name('rulespenyakit.store');
 
   Route::get('/hasil-penyakit', [HasilpenyakitController::class, 'index'])->name('riwayatdiagnosa-penyakit');
 

@@ -50,7 +50,7 @@
                                                     {{ $gejalapenyakit->name }}
                                                     <input type="hidden" id="in_id_evidence-{{ $gejalapenyakit->id }}"
                                                         name="id_evidence[]" value="{{ $gejalapenyakit->id }}">
-                                                </td>
+                                                </td> 
                                                 <td class="align-middle" style="width: 30%">
                                                     <select class="form-select" name="diagnosa[]">
                                                       <option value="" selected>--Silahkan Pilih--</option>

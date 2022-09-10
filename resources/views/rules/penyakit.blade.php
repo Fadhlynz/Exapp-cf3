@@ -4,12 +4,18 @@
     <div class="page-content">
         <section class="section">
             <div class="card">
-                <form action="{{ route('rulespenyakit-store') }}" method="post">
+                <form action="{{ route('rulespenyakit.store') }}" method="post">
                     @csrf
                     <div class="card-header">
                         <h4 class="card-title">{{ $title }}</h4>
+                        @if (session('status'))
+                            <div class="alert alert-success alert-dismissible show fade">
+                                {{ session('status') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
                     </div>
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <ul class="list-group">
                             @foreach ($penyakit as $penyakits)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">

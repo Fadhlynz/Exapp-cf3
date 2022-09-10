@@ -31,6 +31,6 @@ class RulespenyakitController extends Controller
           ]);
         }
 
-     return redirect()->route('rules.penyakit');
+        return redirect()->route('rules.penyakit')->with('status', 'Data Rules Berhasil Di Ubah!');
      }
 }

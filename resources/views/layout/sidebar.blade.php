@@ -3,8 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/">Sipagung
-                        <!-- <img src="asset/images/logo/logo.png" alt="Logo" srcset=""></a> -->
+                    <a href="/">
+                        <img src="{{ asset('mazer/images/logo/logo.png') }}" alt="Logo" srcset="">Sipagung</a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -52,11 +52,12 @@
                     <li
                         class="sidebar-item {{ $title == 'Penyakit' || $title == 'Gejala Penyakit' || $title == 'Kondisi Penyakit' || $title == 'Rules Penyakit' ? 'active' : '' }} has-sub">
                         <a href="#" class='sidebar-link'>
-                            <i class="bi bi-bug"></i>
+                            <i class="bi bi-file-earmark-medical-fill"></i>
                             <span>Penyakit</span>
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item {{ $title == 'Penyakit' ? 'active' : '' }} ">
+
                                 <a href="{{ route('penyakit.index') }}">Penyakit</a>
                             </li>
                             <li class="submenu-item {{ $title == 'Gejala Penyakit' ? 'active' : '' }} ">
@@ -110,15 +111,15 @@
                     <li class="sidebar-item {{ $title == 'Setting' || $title == 'Users' ? 'active' : '' }} has-sub">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-gear"></i>
-                            <span>Setting</span>
+                            <span>Pengaturan</span>
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item {{ $title == 'Setting' ? 'active' : '' }}">
-                                <a href="{{ route('setting.index') }}">Setting</a>
+                                <a href="{{ route('setting.index') }}">Pengaturan</a>
                             </li>
                             @if (auth()->user()->level == 'admin')
                                 <li class="submenu-item {{ $title == 'User' ? 'active' : '' }}">
-                                    <a href="{{ route('user.index') }}">User data</a>
+                                    <a href="{{ route('user.index') }}">Data Pengguna</a>
                                 </li>
                             @endif
                         </ul>

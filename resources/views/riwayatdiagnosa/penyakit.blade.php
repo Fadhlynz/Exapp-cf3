@@ -21,7 +21,7 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="graph-tab" data-bs-toggle="tab" href="#graph" role="tab"
-                                aria-controls="graph" aria-selected="true">Graph</a>
+                                aria-controls="graph" aria-selected="true">Grafik</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -45,7 +45,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $row->created_at->format('d M Y, H:m:s') }}</td>
                                                 <td>{{ $row->nama }}</td>
-                                                <td class="text-end">{{ unserialize($row->cf_max)[1] }} <b>(<span
+                                                <td class="text-end">{{ unserialize($row->cf_max)[2] }} <b>(<span
                                                             class="text-danger">{{ number_format(unserialize($row->cf_max)[0] * 100, 2) }}%</span>)</b>
                                                 </td>
                                                 <td>
@@ -93,4 +93,67 @@
             </div>
         </section>
     </div>
+    <script src="{{ asset('mazer/vendors/chartjs/Chart.min.js') }}"></script>
+    <script>
+        var chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            info: '#41B1F9',
+            blue: '#3245D1',
+            purple: 'rgb(153, 102, 255)',
+            grey: '#EBEFF6'
+        };
+
+        var ctxBar = document.getElementById("bar").getContext("2d");
+        var myBar = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: [
+                    @foreach ($penyakits as $penyakit)
+                        "{{ $penyakit->name }}",
+                    @endforeach
+                ],
+                datasets: [{
+                    label: 'Data Hama',
+                    backgroundColor: chartColors.blue,
+                    data: [
+                        @foreach ($penyakits as $penyakit)
+                            {{ $riwayats->where('id_penyakit', $penyakit->id)->count() }},
+                        @endforeach
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                barRoundness: 1,
+                title: {
+                    display: true,
+                    text: "Grafik Hama"
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            suggestedMax: 40 + 20,
+                            padding: 10,
+                        },
+                        gridLines: {
+                            drawBorder: false,
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
 @endsection

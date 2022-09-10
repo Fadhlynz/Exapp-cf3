@@ -19,18 +19,17 @@ class RuleshamaController extends Controller
           'setting_type_input' => Setting::find(1),
           'values' => Kondisihama::orderby('value','desc')->get(),
           'min' => Kondisihama::where('value', 0)->first(),
-          'max' => Kondisihama::where('value', 1)->first(),
+          'max' => Kondisihama::where('value', 1)->first(), 
         ]); 
      } 
 
      public function store(Request $request)
-     {
+     { 
         foreach ($request->id_role as $key => $role){
           Ruleshama::where('id', $role)->update([
             'value' => $request->evidance_value[$key]
           ]);
         }
-
-     return redirect()->route('rules.hama');
+        return redirect()->route('rules.hama')->with('status', 'Data Rules Berhasil Di Ubah!');
      }
 }

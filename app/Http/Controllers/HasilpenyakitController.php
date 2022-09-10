@@ -5,17 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Hasilpenyakit;
 use App\Models\Penyakit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HasilpenyakitController extends Controller
 {
       public function index()
       {
+      $penyakits = Penyakit::all();
       $riwayat = Hasilpenyakit::with('penyakit') 
       ->latest()
       ->paginate(10);
       return view('riwayatdiagnosa.penyakit', [
       'title' => 'Riwayat Diagnosa penyakit',
       'riwayats' => $riwayat,
+      'penyakits' => $penyakits
       ]);
       } 
 
@@ -29,7 +32,12 @@ class HasilpenyakitController extends Controller
 
       public function destroy($id)
       {
-      Hasilpenyakit::where('id',$id)->delete();
+         $penyakit = Hasilpenyakit::find($id);
+         $destination = 'storage/downloads/' . $penyakit->file_pdf;
+         if (File::exists($destination)) {
+         File::delete($destination);
+         }
+        Hasilpenyakit::where('id',$id)->delete();
       return redirect()->route('riwayatdiagnosa-penyakit')->with('status', 'Data Berhasil Dihapus!');
       }
 }

@@ -11,6 +11,7 @@ class Hasilhama extends Model
 
    protected $fillable = [
    'nama',
+   'id_hama',
    'hasil_diagnosa',
    'cf_max',
    'gejala_terpilih',

@@ -10,7 +10,7 @@
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ route('home') }}">Beranda</a></li>
                     <li class="dropdown"><a href="#"><span>Diagnosa</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a target="_blank" href="{{ route('diagnosa-hama') }}">Diagnosa Hama</a></li>
@@ -26,7 +26,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="{{ route('post-keterangan') }}">Post Keterangan</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('about') }}">About</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('about') }}">Tentang</a></li>
                     <li><a class="getstarted scrollto" href="{{ route('login') }}">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

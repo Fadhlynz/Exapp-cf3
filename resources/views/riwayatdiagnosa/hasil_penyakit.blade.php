@@ -79,11 +79,11 @@
                                         mengambil nilai CF yang paling pinggi yakni
                                         <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }}
                                             ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu
-                                        <b>{{ unserialize($riwayat->cf_max)[1] }}</b>
+                                        <b>{{ unserialize($riwayat->cf_max)[2] }}</b>
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="{{ url('images/penyakit/', unserialize($riwayat->cf_max)[2]) }}" width="250"
+                                    <img src="{{ url('images/penyakit/', unserialize($riwayat->cf_max)[3]) }}" width="250"
                                         height="120" alt="">
                                 </div>
                             </div>

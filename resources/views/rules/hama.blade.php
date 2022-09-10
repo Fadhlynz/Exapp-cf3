@@ -4,10 +4,16 @@
     <div class="page-content">
         <section class="section">
             <div class="card">
-                <form action="{{ route('ruleshama-store') }}" method="post">
+                <form action="{{ route('ruleshama.store') }}" method="post">
                     @csrf
                     <div class="card-header">
                         <h4 class="card-title">{{ $title }}</h4>
+                        @if (session('status'))
+                            <div class="alert alert-success alert-dismissible show fade">
+                                {{ session('status') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
@@ -62,7 +68,7 @@
                                                                 <input type="hidden" id="id_role-{{ $data->id }}"
                                                                     name="id_role[]" value="{{ $data->id }}">
                                                                 <select class="form-select" name="evidance_value[]"
-                                                                    id="basicSelect">
+                                                                    id="basicSelect"> 
                                                                     @foreach ($values as $value)
                                                                         <option value="{{ $value->value }}"
                                                                             {{ $value->value == $data->value ? 'selected' : '' }}>

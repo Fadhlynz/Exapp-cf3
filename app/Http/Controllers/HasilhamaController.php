@@ -14,12 +14,14 @@ class HasilhamaController extends Controller
 {
     public function index()
     {
+      $hamas = Hama::all();
       $riwayat = Hasilhama::with('hama')
       ->latest()
       ->paginate(10);
       return view('riwayatdiagnosa.hama', [
       'title' => 'Riwayat Diagnosa Hama',
       'riwayats' => $riwayat,
+      'hamas' => $hamas
       ]);
     }
 
@@ -31,9 +33,14 @@ class HasilhamaController extends Controller
         ]);
     }
 
-    public function destroy(Hasilhama $hasilhama)
+    public function destroy($id)
     {
-      Hasilhama::where('id',$hasilhama->id)->delete();
+      $hama = Hasilhama::find($id); 
+       $destination = 'storage/downloads/' . $hama->file_pdf;
+       if (File::exists($destination)) {
+       File::delete($destination);
+       }
+      Hasilhama::where('id',$id)->delete();
       return redirect()->route('riwayatdiagnosa-hama')->with('status', 'Data Berhasil Dihapus!');
     }
 }

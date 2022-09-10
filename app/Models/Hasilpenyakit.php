@@ -11,6 +11,7 @@ class Hasilpenyakit extends Model
 
     protected $fillable = [
     'nama',
+    'id_penyakit',
     'hasil_diagnosa',
     'cf_max',
     'gejala_terpilih',
