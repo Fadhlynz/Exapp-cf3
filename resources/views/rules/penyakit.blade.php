@@ -13,7 +13,7 @@
                                 {{ session('status') }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                        @endif
+                        @endif 
                     </div>
                     <div class="card-body">
                         <ul class="list-group">

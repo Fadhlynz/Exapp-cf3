@@ -26,7 +26,7 @@
                                 <th>No</th>
                                 <th>Code</th>
                                 <th>Hama</th>
-                                <th>Image</th>
+                                <th>Image</th> 
                                 <th>Option</th>
                             </tr>
                         </thead>

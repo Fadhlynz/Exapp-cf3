@@ -22,16 +22,6 @@ class GejalahamaController extends Controller
         ]);
     }
 
-    public function autoCode(){
-        $lates_gejala = Gejalahama::orderby('id', 'desc')->first();
-        $code = $lates_gejala->code;
-        $order = (int) substr($code, 2, 4);
-        $order++;
-        $letter = "GH";
-        $code = $letter . sprintf("%04s", $order);
-        return $code;
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -40,8 +30,7 @@ class GejalahamaController extends Controller
     public function create()
     {
         return view('gejalahama.create', [
-            'title' => 'Tambah Gejala Hama',
-            'code' => $this->autoCode()
+            'title' => 'Tambah Gejala Hama'
         ]);
     }
 
@@ -54,7 +43,7 @@ class GejalahamaController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            'code' => 'required|max:255|unique:gejalahamas',
+            'code' => 'required|max:255',
             'name' => 'required|max:255'
         ]);
 
@@ -100,7 +89,7 @@ class GejalahamaController extends Controller
         return view('gejalahama.edit', [
             'title' => 'Edit Gejala Hama',
             'gejalahama' => $gejalahama
-        ]);
+        ]); 
     }
 
     /**
@@ -113,11 +102,13 @@ class GejalahamaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'code' => 'required|max:255',
             'name' => 'required|max:255'
         ]);
 
         Gejalahama::where('id', $id)
             ->update([
+                'code' => $request->code,
                 'name' => $request->name
             ]);
             

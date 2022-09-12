@@ -11,7 +11,7 @@ class Rulespenyakit extends Model
 
     protected $table = 'gejalapenyakit_penyakit';
 
-     protected $fillable = [
+    protected $fillable = [
         'penyakit_id',
         'gejalapenyakit_id',
         'value'

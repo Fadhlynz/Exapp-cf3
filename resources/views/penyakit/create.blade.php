@@ -16,8 +16,8 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="code">Code Penyakit</label>
-                                        <input type="text" id="code" value="{{ $code }}"
-                                            class="form-control" name="code" required readonly>
+                                        <input type="text" id="code"
+                                            class="form-control" name="code" required>
                                     </div>
                                 </div>
                                 <div class="col-12">

@@ -8,7 +8,7 @@
                     <h4 class="card-title">{{ $title }}</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form form-vertical " method="post" action="{{ route('penyakit.update', $penyakit->id) }}">
+                    <form class="form form-vertical" enctype="multipart/form-data" method="post" action="{{ route('penyakit.update', $penyakit->id) }}">
                         @method('patch')
                         @csrf
                         <div class="form-body">
@@ -17,7 +17,7 @@
                                     <div class="form-group">
                                         <label for="code">Code</label>
                                         <input type="text" id="code" value="{{ $penyakit->code }}"
-                                            class="form-control" name="code" required readonly>
+                                            class="form-control" name="code" required>
                                     </div>
                                 </div>
                                 <div class="col-12">

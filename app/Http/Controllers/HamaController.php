@@ -23,16 +23,6 @@ class HamaController extends Controller
         ]);
     }
 
-      public function autoCode(){
-        $lates_hama = Hama::orderby('id', 'desc')->first();
-        $code = $lates_hama->code;
-        $order = (int) substr($code, 2, 4);
-        $order++;
-        $letter = "GH";
-        $code = $letter . sprintf("%04s", $order); 
-        return $code;
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,8 +31,7 @@ class HamaController extends Controller
     public function create()
     {
         return view('hama.create', [
-            'title' => 'Tambah Hama',
-            'code' => $this->autoCode()
+            'title' => 'Tambah Hama'
         ]);
     }
 
@@ -125,15 +114,16 @@ class HamaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'det_hama' => 'required',
-            'srn_hama' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
-        ]);
+        // $request->validate([
+        //     'name' => 'required|max:255',
+        //     'det_hama' => 'required',
+        //     'srn_hama' => 'required',
+        //     'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+        // ]);
 
         $hama = Hama::find($id);
 
+         $imageName = '';
         if ($request->hasFile('image')) {
           $destination = 'images/hama/' . $hama->images;
           if (File::exists($destination)) {
@@ -143,14 +133,26 @@ class HamaController extends Controller
           $extention = $images->getClientOriginalExtension();
           $imageName = time() . '.' . $extention;
           $images->move(public_path('images/hama/'), $imageName);
+          Hama::where('id', $id)->update([
+              'code' => $request->code,
+              'name' => $request->name,
+              'det_hama' => $request->det_hama,
+              'srn_hama' => $request->srn_hama,
+              'images' => $imageName
+          ]);
+        } else {
+          $imageName = $hama->images;
+          Hama::where('id', $id)->update([
+              'code' => $request->code,
+              'name' => $request->name,
+              'det_hama' => $request->det_hama,
+              'srn_hama' => $request->srn_hama,
+              'images' => $imageName
+          ]);
         }
 
-        Hama::where('id', $id)->update([
-            'name' => $request->name,
-            'det_hama' => $request->det_hama,
-            'srn_hama' => $request->srn_hama,
-            'images' => $imageName
-        ]);
+
+
 
         return redirect()->route('hama.index')->with('status', 'Data Berhasil Diubah!');
     }
@@ -166,7 +168,7 @@ class HamaController extends Controller
     {
         Hama::destroy($hama->id);
         $destination = 'images/hama/' . $hama->images;
-        if (File::exists($destination)) {
+        if (File::exists($destination)) { 
         File::delete($destination);
         }
       Ruleshama::where('gejalahama_id', $hama->id)->delete();

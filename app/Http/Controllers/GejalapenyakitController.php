@@ -18,18 +18,8 @@ class GejalapenyakitController extends Controller
     {
         return view('gejalapenyakit.index', [
             'title' => 'Gejala Penyakit',
-            'gejalapenyakit' => Gejalapenyakit::orderby('id', 'asc')->get()
+            'gejalapenyakit' => Gejalapenyakit::orderby('code', 'asc')->get()
         ]);
-    }
-
-    public function autoCode(){
-        $lates_gejala = Gejalapenyakit::orderby('id', 'desc')->first();
-        $code = $lates_gejala->code;
-        $order = (int) substr($code, 2, 4);
-        $order++;
-        $letter = "CP";
-        $code = $letter . sprintf("%04s", $order);
-        return $code;
     }
 
     /**
@@ -40,8 +30,7 @@ class GejalapenyakitController extends Controller
     public function create()
     {
         return view('gejalapenyakit.create', [
-            'title' => 'Tambah Gejala Penyakit',
-            'code' => $this->autoCode()
+            'title' => 'Tambah Gejala Penyakit'
         ]);
     }
 
@@ -54,7 +43,7 @@ class GejalapenyakitController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|max:255|unique:gejalapenyakits',
+            'code' => 'required|max:255',
             'name' => 'required|max:255'
         ]);
 
@@ -113,11 +102,13 @@ class GejalapenyakitController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'code' => 'required|max:255',
             'name' => 'required|max:255'
         ]);
 
         Gejalapenyakit::where('id', $id)
             ->update([
+                'code' => $request->code,
                 'name' => $request->name
             ]);
             

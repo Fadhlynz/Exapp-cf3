@@ -18,7 +18,7 @@
                                     <div class="form-group">
                                         <label for="code">Code</label>
                                         <input type="text" id="code" value="{{ $hama->code }}"
-                                            class="form-control" name="code" required readonly>
+                                            class="form-control" name="code" required>
                                     </div>
                                 </div>
                                 <div class="col-12">

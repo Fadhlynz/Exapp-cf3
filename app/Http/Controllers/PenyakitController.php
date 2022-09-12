@@ -24,15 +24,15 @@ class PenyakitController extends Controller
         ]);
     }
 
-    public function autoCode(){
-        $lates_penyakit = Penyakit::orderby('id', 'desc')->first();
-        $code = $lates_penyakit->code;
-        $order = (int) substr($code, 2, 4);
-        $order++;
-        $letter = "CP";
-        $code = $letter . sprintf("%04s", $order); 
-        return $code;
-    }
+    // public function autoCode(){
+    //     $lates_penyakit = Penyakit::orderby('id', 'desc')->first();
+    //     $code = $lates_penyakit->code;
+    //     $order = (int) substr($code, 2, 4);
+    //     $order++;
+    //     $letter = "CP";
+    //     $code = $letter . sprintf("%04s", $order); 
+    //     return $code;
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -42,8 +42,7 @@ class PenyakitController extends Controller
     public function create()
     {
         return view('penyakit.create', [
-            'title' => 'Tambah Penyakit',
-            'code' => $this->autoCode()
+            'title' => 'Tambah Penyakit'
         ]);
     }
 
@@ -56,7 +55,7 @@ class PenyakitController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|max:255|unique:penyakits',
+            'code' => 'required|max:255',
             'name' => 'required|max:255',
             'det_penyakit' => 'required',
             'srn_penyakit' => 'required',
@@ -127,32 +126,44 @@ class PenyakitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'det_penyakit' => 'required',
-            'srn_penyakit' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
-        ]);
+        // $request->validate([
+        //     'name' => 'required|max:255',
+        //     'det_penyakit' => 'required',
+        //     'srn_penyakit' => 'required'
+        // ]);
 
         $penyakit = Penyakit::find($id);
-
+        
+        // Jika File Image di ganti
         if ($request->hasFile('image')) {
           $destination = 'images/penyakit/' . $penyakit->images;
-        if (File::exists($destination)) {
+          if (File::exists($destination)) {
           File::delete($destination);
-        }
+          }
           $images = $request->file('image');
           $extention = $images->getClientOriginalExtension();
           $imageName = time() . '.' . $extention;
           $images->move(public_path('images/penyakit/'), $imageName);
+
+          Penyakit::where('id', $id)->update([
+          'code' => $request->code,
+          'name' => $request->name,
+          'det_penyakit' => $request->det_penyakit,
+          'srn_penyakit' => $request->srn_penyakit,
+          'images' => $imageName
+          ]);
+        } else {
+          $imageOld = $penyakit->images;
+          Penyakit::where('id', $id)->update([
+          'code' => $request->code,
+          'name' => $request->name,
+          'det_penyakit' => $request->det_penyakit,
+          'srn_penyakit' => $request->srn_penyakit,
+          'images' => $imageOld
+          ]);
         }
 
-        Penyakit::where('id', $id)->update([
-            'name' => $request->name,
-            'det_penyakit' => $request->det_penyakit,
-            'srn_penyakit' => $request->srn_penyakit,
-            'images' => $imageName
-        ]);
+        
 
         return redirect()->route('penyakit.index')->with('status', 'Data Berhasil Diubah!');
     }
