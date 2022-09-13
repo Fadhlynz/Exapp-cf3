@@ -15,8 +15,15 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="code">Code</label>
-                                    <input type="text" id="code" class="form-control" name="code"
-                                        required>
+                                    <input type="text" id="code"
+                                            class="form-control @error('code') is-invalid @enderror"
+                                            value="{{ old('code') }}" name="code" required>
+                                        @error('code')
+                                            <div class="invalid-feedback">
+                                                <i class="bx bx-radio-circle"></i>
+                                                {{ $message }}.
+                                            </div>
+                                        @enderror
                                 </div>
                             </div>
                             <div class="col-12">

@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('hasilhamas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('id_hama');
+            $table->unsignedBigInteger('id_hama');
             $table->text('hasil_diagnosa');
             $table->text('cf_max');
             $table->text('gejala_terpilih');
             $table->string('file_pdf')->nullable();
+            $table->foreign('id_hama')->references('id')->on('hamas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

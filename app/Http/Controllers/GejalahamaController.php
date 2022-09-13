@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GejalahamaCreateRequest;
+use App\Http\Requests\GejalahamaEditRequest;
 use App\Models\Gejalahama;
 use App\Models\Hama;
 use App\Models\Ruleshama;
-use Illuminate\Http\Request;
 
 class GejalahamaController extends Controller
 {
@@ -40,12 +41,8 @@ class GejalahamaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GejalahamaCreateRequest $request)
     {
-         $request->validate([
-            'code' => 'required|max:255',
-            'name' => 'required|max:255'
-        ]);
 
         Gejalahama::create([
             'code' => $request->code,
@@ -85,7 +82,7 @@ class GejalahamaController extends Controller
      */
     public function edit($id)
     {
-         $gejalahama = Gejalahama::where('id',$id)->first();
+        $gejalahama = Gejalahama::where('id',$id)->first();
         return view('gejalahama.edit', [
             'title' => 'Edit Gejala Hama',
             'gejalahama' => $gejalahama
@@ -99,12 +96,8 @@ class GejalahamaController extends Controller
      * @param  \App\Models\Gejalahama  $gejalahama
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(GejalahamaEditRequest $request, $id)
     {
-        $request->validate([
-            'code' => 'required|max:255',
-            'name' => 'required|max:255'
-        ]);
 
         Gejalahama::where('id', $id)
             ->update([

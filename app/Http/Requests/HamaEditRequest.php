@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateEvidenceRequest extends FormRequest
+class HamaEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateEvidenceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class UpdateEvidenceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'code' => 'required|max:255',
+            'name' => 'required|max:255'
         ];
+    }
+
+    public function attributes()
+    {
+    return [
+        'code' => 'Code Hama',
+      ];
+    }
+
+    public function messages()
+    {
+    return [
+        'code.required' => 'Code Hama Tidak Boleh Kosong.',
+        'name.required' => 'Hama Tidak Boleh Kosong.'
+      ];
     }
 }

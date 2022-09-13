@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('gejalapenyakit_penyakit', function (Blueprint $table) {
             $table->id();
-            $table->string('penyakit_id');
-            $table->string('gejalapenyakit_id');
+            $table->unsignedBigInteger('penyakit_id');
+            $table->unsignedBigInteger('gejalapenyakit_id');
             $table->double('value');
+             $table->foreign('penyakit_id')->references('id')->on('penyakits')->onDelete('cascade')->onUpdate('cascade');
+             $table->foreign('gejalapenyakit_id')->references('id')->on('gejalapenyakits')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
