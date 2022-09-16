@@ -15,6 +15,7 @@ class DataHamaSeeder extends Seeder
     public function run()
     {
         Hama::create([
+        'user_id' => 1,
         'code' => 'H1',
         'name' => 'Hama Lalat Bibit',
         'det_hama' => 'Hama lalat bibit ini merupakan serangga yang baru menetas dan biasanya menyerang dengan cara membuat atau melubangi batang tanaman jagung dan memakannya sampai ke dasar batang dari tanaman jagung itu sendiri.',
@@ -22,6 +23,7 @@ class DataHamaSeeder extends Seeder
         'images' => '1660404549.png',
         ]);
         Hama::create([
+        'user_id' => 2,
         'code' => 'H2',
         'name' => 'Hama Ulat Grayak',
         'det_hama' => 'Ulat grayak merupakan serangga ngengat asli daerah tropis yang sebelumnya hanya ditemukan pada pertanaman jagung di Amerika Serikat, Argentina, dan Afrika. Tahun 2018 FAW memasuki Benua Asia di kawasan India, Myanmar, dan Thailand. Maret 2019 dilaporkan merusak tanaman jagung dengan tingkat serangan berat di Kabupaten Pasaman Barat (Sumatera Barat), kemudian menyebar hampir di seluruh wilayah Indonesia. Sebagai jenis hama baru yang menyerang pertanaman jagung di Indonesia, keberadaan hama ulat grayak atau Spodoptera frugiperda ini dapat menjadi ancaman serius bagi para petani di Indonesia.',
@@ -29,6 +31,7 @@ class DataHamaSeeder extends Seeder
         'images' => '1660404567.jpg',
         ]);
         Hama::create([
+        'user_id' => 1,
         'code' => 'H3',
         'name' => 'Hama Larva Penggerek Batang',
         'det_hama' => 'Hama penggerek batang (Ostrinia funacalis) merupakan salah satu dari beberapa jenis hama yang menyerang tanaman jagung, menimbulkan kerusakan secara fisik dan mengakibatkan kerugian secara ekonomi sehingga memerlukan tindakan pengendalian.',
@@ -36,6 +39,7 @@ class DataHamaSeeder extends Seeder
         'images' => '1660404597.png',
         ]);
         Hama::create([
+        'user_id' => 2,
         'code' => 'H4',
         'name' => 'Hama Penggerek Tongkol',
         'det_hama' => 'Helicoverpa armigera merupakan serangga dari kelompok ngengat yang larvanya menjadi salah satu hama penting pada pertanaman kapas dan jagung.',
@@ -43,6 +47,7 @@ class DataHamaSeeder extends Seeder
         'images' => '1660404676.png',
         ]);
         Hama::create([
+        'user_id' => 1,
         'code' => 'H5',
         'name' => 'Hama Belalang Kembara ',
         'det_hama' => 'Belalang kembara adalah jenis belalang besar yang paling tersebar di dunia, dan merupakan

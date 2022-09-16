@@ -52,9 +52,10 @@ class HamaController extends Controller
     }
 
     Hama::create([
+      'user_id' => 1,
       'code' => $request->code,
       'name' => $request->name,
-      'det_hama' => $request->det_hama,
+      'det_hama' => $request->det_hama, 
       'srn_hama' => $request->srn_hama,
       'images' => $request->image = $imageName,
     ]);

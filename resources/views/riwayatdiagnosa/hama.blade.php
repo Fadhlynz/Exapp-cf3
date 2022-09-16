@@ -120,7 +120,7 @@
                     backgroundColor: chartColors.blue,
                     data: [
                         @foreach ($hamas as $hama)
-                            {{ $riwayats->where('hama_id', $hama->id)->count() }},
+                            {{ $riwayats->where('id_hama', $hama->id)->count() }},
                         @endforeach
                     ]
                 }]

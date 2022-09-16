@@ -15,9 +15,7 @@ class HasilhamaController extends Controller
     public function index()
     {
       $hamas = Hama::all();
-      $riwayat = Hasilhama::with('hama')
-      ->latest()
-      ->paginate(10);
+      $riwayat = Hasilhama::all();
       return view('riwayatdiagnosa.hama', [
       'title' => 'Riwayat Diagnosa Hama',
       'riwayats' => $riwayat,

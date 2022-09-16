@@ -93,7 +93,7 @@
                     @php
                         $imge = unserialize($riwayat->cf_max)[3];
                     @endphp
-                    <img src="{{ public_path('images/penyakit/$imge') }}" width="250" height="120" alt="">
+                    <img src="{{ public_path('images/penyakit/'. $imge) }}" width="250" height="120" alt="">
                 </div>
             </div>
         </div>

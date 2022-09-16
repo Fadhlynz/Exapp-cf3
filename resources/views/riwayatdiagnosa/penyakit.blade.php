@@ -108,7 +108,7 @@
 
         var ctxBar = document.getElementById("bar").getContext("2d");
         var myBar = new Chart(ctxBar, {
-            type: 'bar',
+            type: 'bar', 
             data: {
                 labels: [
                     @foreach ($penyakits as $penyakit)

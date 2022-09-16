@@ -10,11 +10,12 @@ class Penyakit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'code',
-        'name',
-        'det_penyakit',
-        'srn_penyakit',
-        'images'
+      'user_id',
+      'code',
+      'name',
+      'det_penyakit',
+      'srn_penyakit',
+      'images'
     ];
 
     public function history(){

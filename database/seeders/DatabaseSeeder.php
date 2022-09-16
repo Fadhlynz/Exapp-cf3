@@ -19,6 +19,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+      // \App\Models\User::factory(10)->create();
+      User::create([
+      'name' => 'Fadli',
+      'email' => 'admin@mail.com',
+      'password' => bcrypt('admin123'),
+      'level' => 'admin',
+      ]);
+
+      User::create([
+      'name' => 'User',
+      'email' => 'user@mail.com',
+      'password' => bcrypt('user123'),
+      'level' => 'user',
+      ]);
+      
         $this->call([
         DataHamaSeeder::class,
         DataPenyakitSeeder::class,
@@ -26,21 +41,6 @@ class DatabaseSeeder extends Seeder
         GejalaPenyakitSeeder::class,
         RulesHamaSeeder::class,
         RulesPenyakitSeeder::class,
-        ]);
-
-      // \App\Models\User::factory(10)->create();
-        User::create([
-            'name' => 'Fadli',
-            'email' => 'admin@mail.com',
-            'password' => bcrypt('admin123'),
-            'level' => 'admin',
-        ]);
-
-        User::create([
-            'name' => 'User',
-            'email' => 'user@mail.com',
-            'password' => bcrypt('user123'),
-            'level' => 'user',
         ]);
 
         Value::create(['name' => 'Sangat Yakin', 'value' => 1.0]);

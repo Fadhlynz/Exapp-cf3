@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text('cf_max');
             $table->text('gejala_terpilih');
             $table->string('file_pdf')->nullable();
-            $table->foreign('id_hama')->references('id')->on('hamas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            $table->foreign('id_hama')->references('id')->on('hamas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

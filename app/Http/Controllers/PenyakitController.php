@@ -52,6 +52,7 @@ class PenyakitController extends Controller
     }
 
     Penyakit::create([
+      'user_id' => 1,
       'code' => $request->code,
       'name' => $request->name,
       'det_penyakit' => $request->det_penyakit,

@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('gejalapenyakit_penyakit', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('penyakit_id');
-            $table->unsignedBigInteger('gejalapenyakit_id');
-            $table->double('value');
-             $table->foreign('penyakit_id')->references('id')->on('penyakits')->onDelete('cascade')->onUpdate('cascade');
-             $table->foreign('gejalapenyakit_id')->references('id')->on('gejalapenyakits')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();
+          $table->id();
+          $table->unsignedBigInteger('penyakit_id');
+          $table->unsignedBigInteger('gejalapenyakit_id');
+          $table->double('value');
+          $table->foreign('penyakit_id')->references('id')->on('penyakits')->onDelete('cascade')->onUpdate('cascade');
+          $table->foreign('gejalapenyakit_id')->references('id')->on('gejalapenyakits')->onDelete('cascade')->onUpdate('cascade');
+          $table->timestamps();
         });
     }
 
