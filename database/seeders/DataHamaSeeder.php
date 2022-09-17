@@ -36,7 +36,7 @@ class DataHamaSeeder extends Seeder
         'name' => 'Hama Larva Penggerek Batang',
         'det_hama' => 'Hama penggerek batang (Ostrinia funacalis) merupakan salah satu dari beberapa jenis hama yang menyerang tanaman jagung, menimbulkan kerusakan secara fisik dan mengakibatkan kerugian secara ekonomi sehingga memerlukan tindakan pengendalian.',
         'srn_hama' => 'Solution Belum Tersedia',
-        'images' => '1660404597.png',
+        'images' => '1663384944.png',
         ]);
         Hama::create([
         'user_id' => 2,

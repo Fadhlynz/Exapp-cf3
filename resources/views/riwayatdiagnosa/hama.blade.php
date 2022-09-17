@@ -78,7 +78,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">History Case Not Found</td>
+                                                <td colspan="5" class="text-center">Data Hama Tidak Ada</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

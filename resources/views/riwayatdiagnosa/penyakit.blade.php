@@ -78,7 +78,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">History Case Not Found</td>
+                                                <td colspan="5" class="text-center">Data Penyakit Tidak Ada</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

@@ -109,15 +109,15 @@
                                             </thead>
                                             <tbody>
 
-                                                @forelse ($hasilhamas as $hasilhama)
+                                                @forelse ($hasilhamas as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $hasilhama->nama }}</td>
-                                                        <td class="text-end">{{ unserialize($hasilhama->cf_max)[2] }}
+                                                        <td>{{ $row->nama }}</td>
+                                                        <td class="text-end">{{ unserialize($row->cf_max)[2] }}
                                                             <b>(<span
-                                                                    class="text-danger">{{ number_format(unserialize($hasilhama->cf_max)[0] * 100, 2) }}%</span>)</b>
+                                                                    class="text-danger">{{ number_format(unserialize($row->cf_max)[0] * 100, 2) }}%</span>)</b>
                                                         </td>
-                                                        <td>{{ $hasilhama->created_at->format('d M Y') }}</td>
+                                                        <td>{{ $row->created_at->format('d M Y') }}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
@@ -172,15 +172,15 @@
                                             </thead>
                                             <tbody>
 
-                                                @forelse ($hasilpenyakits as $hasilpenyakit)
+                                                @forelse ($hasilpenyakits as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $hasilpenyakit->nama }}</td>
-                                                        <td class="text-end">{{ unserialize($hasilpenyakit->cf_max)[2] }}
+                                                        <td>{{ $row->nama }}</td>
+                                                        <td class="text-end">{{ unserialize($row->cf_max)[2] }}
                                                             <b>(<span
-                                                                    class="text-danger">{{ number_format(unserialize($hasilpenyakit->cf_max)[0] * 100, 2) }}%</span>)</b>
+                                                                    class="text-danger">{{ number_format(unserialize($row->cf_max)[0] * 100, 2) }}%</span>)</b>
                                                         </td>
-                                                        <td>{{ $hasilpenyakit->created_at->format('d M Y') }}</td>
+                                                        <td>{{ $row->created_at->format('d M Y') }}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
@@ -248,9 +248,9 @@
                         chartColors.violet,
                     ],
                     data: [
-                        @foreach ($hamas as $hama)
-                            {{ $hasilhama->where('id_hama', $hama->id)->count() }},
-                        @endforeach
+                      @foreach ($hamas as $hama)
+                          {{ $hasilhama->where('id_hama', $hama->id)->count() }},
+                      @endforeach
                     ]
                 }]
             },
