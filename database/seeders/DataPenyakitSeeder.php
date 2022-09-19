@@ -56,7 +56,7 @@ class DataPenyakitSeeder extends Seeder
         'code' => 'P5',
         'name' => 'Penyakit Virus Mosaik Kerdil Jagung',
         'det_penyakit' => 'Penyakit ini merupakan penyakit virus jagung yang pertama dilaporkan di Indonesia. Penyebarannya sangat luas, meliputi hampir di semua negara penghasil jagung di dunia.',
-        'srn_penyakit' => '1) Mencabut tanaman yang terinfeksi seawal mungkin agar tidak menjadi sumber infeksi bagi tanaman sekitarnya ataupun pertanaman yang akan datang. 2) Mengadakan pergiliran tanaman, tidak menanam jagung terus menerus di lahan yang sama. 3) Penggunaan peptisida apabila di lapangan populasi vektor cukup tinggi. 3) Tidak penggunakan benih yang berasal dari tanaman yang terinfeksi.',
+        'srn_penyakit' => '1) Mencabut tanaman yang terinfeksi seawal mungkin agar tidak menjadi sumber infeksi bagi tanaman sekitarnya ataupun pertanaman yang akan datang. 2) Mengadakan pergiliran tanaman, tidak menanam jagung terus menerus di lahan yang sama. 3) Penggunaan peptisida apabila di lapangan populasi vektor cukup tinggi. 4) Tidak penggunakan benih yang berasal dari tanaman yang terinfeksi.',
         'images' => '1662961233.png',
         ]);
     }
