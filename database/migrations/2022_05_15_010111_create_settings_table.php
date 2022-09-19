@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('evidence_name');
-            $table->string('hypothesis_name');
             $table->enum('input_type', ['range', 'select']);
             $table->timestamps();
         });

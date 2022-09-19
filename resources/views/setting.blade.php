@@ -10,10 +10,10 @@
             <div class="card-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">About</a>
+                        <a class="nav-link active" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">Tentang</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="input-tab" data-bs-toggle="tab" href="#input" role="tab" aria-controls="input" aria-selected="false">Input Value</a>
+                        <a class="nav-link" id="input-tab" data-bs-toggle="tab" href="#input" role="tab" aria-controls="input" aria-selected="false">Tipe Masukan</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -21,10 +21,10 @@
                         <form action="{{ route('setting.save') }}" method="post">
                             @csrf
                             <div class="row m-3">
-                                <h6>About</h6>
+                                <h6>Tentang</h6>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="title">Title</label>
+                                        <label for="title">Judul</label>
                                         <input type="text" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title',$setting->title) }}" id="title" name="title" required>
                                         @error('title') 
                                         <div class="invalid-feedback">
@@ -34,32 +34,9 @@
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="editor" class="form-label">Description</label>
+                                        <label for="editor" class="form-label">Deskripsi</label>
                                         <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="editor" cols="30" rows="10">{{ old('description', $setting->description) }}</textarea>
                                         @error('description')
-                                        <div class="invalid-feedback">
-                                            <i class="bx bx-radio-circle"></i>
-                                            {{ $message }}.
-                                        </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <h6>Component</h6>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="evidence_name">Evidence Name</label>
-                                        <input type="text" id="evidence_name" class="form-control @error('evidence_name') is-invalid @enderror" value="{{ old('evidence_name',$setting->evidence_name) }}" id="evidence_name" name="evidence_name" required>
-                                        @error('evidence_name')
-                                        <div class="invalid-feedback">
-                                            <i class="bx bx-radio-circle"></i>
-                                            {{ $message }}.
-                                        </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="hypothesis_name">Hypothesis Name</label>
-                                        <input type="text" id="hypothesis_name" class="form-control @error('hypothesis_name') is-invalid @enderror" value="{{ old('hypothesis_name',$setting->hypothesis_name) }}" id="hypothesis_name" name="hypothesis_name" required>
-                                        @error('hypothesis_name')
                                         <div class="invalid-feedback">
                                             <i class="bx bx-radio-circle"></i>
                                             {{ $message }}.
@@ -73,7 +50,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
                                     <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
                                     </svg>
-                                    Save
+                                    Simpan
                                 </button>
                             </div>
                         </form>
@@ -90,27 +67,27 @@
                                         </svg>
                                         <ul>
                                             <li>
-                                                If you want to increase or decrease the certainty value then all the certainty values in the role will be reset to 0.
+                                                Jika Anda ingin menambah atau mengurangi nilai kepastian maka semua nilai kepastian dalam sistem akan direset ke 0.
                                             </li>
                                             <li>
-                                                Every value of certainty value will automate create base on the total certainty value.
+                                                Setiap nilai kepastian akan diotomatisasi dan dibuat berdasarkan nilai kepastian total.
                                             </li>
                                             <li>
-                                                If certainty name is null then the certainty value will be auti filled.
+                                                Jika nama kepastian adalah nol maka nilai kepastian akan terisi secara otomatis.
                                             </li>
                                         </ul>
                                     </div>
-                                    <h6>Certainty Value List</h6>
+                                    <h6>Daftar Nilai Kepastian</h6>
                                     <div class="form-group">
                                         <div class="row mt-2 mb-2">
                                             <div class="col-6">
-                                                <label for="">Name</label>
+                                                <label for="">Nama</label>
                                             </div>
                                             <div class="col-3">
-                                                <label for="">Value</label>
+                                                <label for="">Nilai</label>
                                             </div>
                                             <div class="col-3">
-                                                <label for="">Delete</label>
+                                                <label for="">Hapus</label>
                                             </div>
                                         </div>
                                         <div id="dynamic_field">
@@ -143,17 +120,17 @@
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                                                     </svg>
-                                                    Add Value</a>
+                                                    Tambahkan Nilai</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div> 
                                 <div class="row m-3">
-                                    <h6>Input Type</h6>
+                                    <h6>Tipe Masukan</h6>
                                     <div class="form-group">
                                         <select class="form-select" name="input_type" id="basicSelect">
-                                            <option value="range" {{ $setting->input_type == 'range' ? 'selected' : '' }}>Range</option>
-                                            <option value="select" {{ $setting->input_type == 'select' ? 'selected' : '' }}>Select</option>
+                                            <option value="range" {{ $setting->input_type == 'range' ? 'selected' : '' }}>Jarak</option>
+                                            <option value="select" {{ $setting->input_type == 'select' ? 'selected' : '' }}>Pilihan</option>
                                         </select>
                                     </div>
                                 </div>
@@ -162,7 +139,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
                                         <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
                                         </svg>
-                                        Save
+                                        Simpan
                                     </button>
                                 </div>
                             </form>

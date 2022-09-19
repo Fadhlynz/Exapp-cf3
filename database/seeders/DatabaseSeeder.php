@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
       // \App\Models\User::factory(10)->create();
       User::create([
-      'name' => 'Fadli',
+      'name' => 'Admin',
       'email' => 'admin@mail.com',
       'password' => bcrypt('admin123'),
       'level' => 'admin',
@@ -51,42 +51,9 @@ class DatabaseSeeder extends Seeder
         Value::create(['name' => 'Tidak Tahu', 'value' => 0.0]);
 
         Setting::create([
-            'title' => 'Sistem Pakar Penyakit Manusia',
-            'description' => '<p>Sistem pakar adalah sistem yang membantu para pakar untuk melakuakan diagnosa suatu penyakit apapun seperti penyakit pada manusia, hewan, tumbuhan dan makhluk hidup lainnya. dengan bantuan komputasi komputer untuk melakukan diagnosa berdasarkan ilmu atau pemahaman pakar.</p><p>Pada sistem pakar Exapp ini metode pakar yang digunakan untuk mendiagnosa adalah metode Ceratainty Factor. Ceratinty Factor atau faktor kepastian adalah salah satu metode sistem pakar untuk membuktikan apakah suatu fakta itu pasti ataukah tidak pasti yang berbentuk metric yang biasanya digunakan dalam sistem pakar.</p><p>Exapp memiliki kelebihan untuk menambakan jenis hipotesisi seperti penyakit dan evidence seperti gejala dan juga bisa digunakan untuk melakukan diagnosa apapun.</p>',
-            'evidence_name' => 'Gejala',
-            'hypothesis_name' => 'Penyakit',
+            'title' => 'Sistem Pakar Diagnosa Hama dan Penyakit pada Tanaman Jagung',
+            'description' => '<p>Sistem pakar adalah sistem yang membantu para pakar untuk melakuakan diagnosa suatu penyakit apapun seperti penyakit pada manusia, hewan, tumbuhan dan makhluk hidup lainnya. dengan bantuan komputasi komputer untuk melakukan diagnosa berdasarkan ilmu atau pemahaman pakar.</p><p>Pada sistem pakar Sipagung ini metode pakar yang digunakan untuk mendiagnosa adalah metode Ceratainty Factor. Ceratinty Factor atau faktor kepastian adalah salah satu metode sistem pakar untuk membuktikan apakah suatu fakta itu pasti ataukah tidak pasti yang berbentuk metric yang biasanya digunakan dalam sistem pakar.</p><p>Sipagung memiliki kelebihan untuk menambakan jenis hipotesisi seperti penyakit dan evidence seperti gejala dan juga bisa digunakan untuk melakukan diagnosa apapun.</p>',
             'input_type' => 'select'
         ]);
-
-        // History::create(['hypothesis_id' => 1, 'name' => 'Jonahtan', 'description' => 'A Patient', 'value' => 75.4]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Zeppeli', 'description' => 'A Patient', 'value' => 87.6]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Speedwagon', 'description' => 'A Patient', 'value' => 98.7]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Erina', 'description' => 'A Patient', 'value' => 96.8]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Joseph', 'description' => 'A Patient', 'value' => 98.6]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Cesar', 'description' => 'A Patient', 'value' => 90.7]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Lisa Lisa', 'description' => 'A Patient', 'value' => 76.65]);
-        // History::create(['hypothesis_id' => 1, 'name' => 'Jotaro', 'description' => 'A Patient', 'value' => 67.78]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Kakyoin', 'description' => 'A Patient', 'value' => 67.8]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Avdol', 'description' => 'A Patient', 'value' => 78.9]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Polnaref', 'description' => 'A Patient', 'value' => 79.7]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Josuke', 'description' => 'A Patient', 'value' => 87.56]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Okuyasu', 'description' => 'A Patient', 'value' => 56.67]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Koichi', 'description' => 'A Patient', 'value' => 76.89]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Rohan', 'description' => 'A Patient', 'value' => 87.65]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Giorno', 'description' => 'A Patient', 'value' => 98.76]);
-        // History::create(['hypothesis_id' => 2, 'name' => 'Bucalati', 'description' => 'A Patient', 'value' => 87.66]);
-        // History::create(['hypothesis_id' => 3, 'name' => 'Mista', 'description' => 'A Patient', 'value' => 99.65]);
-        // History::create(['hypothesis_id' => 3, 'name' => 'Abachiro', 'description' => 'A Patient', 'value' => 77.76]);
-        // History::create(['hypothesis_id' => 3, 'name' => 'Narancia', 'description' => 'A Patient', 'value' => 67.86]);
-        // History::create(['hypothesis_id' => 3, 'name' => 'Jolyne', 'description' => 'A Patient', 'value' => 100.78]);
-        // History::create(['hypothesis_id' => 3, 'name' => 'Ermes', 'description' => 'A Patient', 'value' => 87.65]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Foo Fighters', 'description' => 'A Patient', 'value' => 76.55]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Emporio', 'description' => 'A Patient', 'value' => 100.55]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Weather Report', 'description' => 'A Patient', 'value' => 65.88]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Dio', 'description' => 'A Patient', 'value' => 87.76]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Kars', 'description' => 'A Patient', 'value' => 100.65]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Kira', 'description' => 'A Patient', 'value' => 56.75]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Diavolo', 'description' => 'A Patient', 'value' => 87.56]);
-        // History::create(['hypothesis_id' => 4, 'name' => 'Pucci', 'description' => 'A Patient', 'value' => 67.88]);
     }
 }

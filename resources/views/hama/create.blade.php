@@ -15,7 +15,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="code">Code Hama</label>
+                                        <label for="code">Kode Hama</label>
                                         <input type="text" id="code"
                                             class="form-control @error('code') is-invalid @enderror"
                                             value="{{ old('code') }}" name="code" required>
