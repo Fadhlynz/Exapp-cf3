@@ -213,7 +213,7 @@
         </section>
     </div>
 
-    {{-- Grafik Hama --}}
+    Grafik Hama
     <script src="{{ asset('mazer/vendors/chartjs/Chart.min.js') }}"></script>
     <script>
         var chartColors = {
@@ -249,7 +249,7 @@
                     ],
                     data: [
                       @foreach ($hamas as $hama)
-                          {{ $hasilhama->where('id_hama', $hama->id)->count() }},
+                          {{ $hasilhamas->where('id_hama', $hama->id)->count() }},
                       @endforeach
                     ]
                 }]
@@ -305,7 +305,7 @@
                     ],
                     data: [
                         @foreach ($penyakits as $penyakit)
-                            {{ $hasilpenyakit->where('id_penyakit', $penyakit->id)->count() }},
+                            {{ $hasilpenyakits->where('id_penyakit', $penyakit->id)->count() }},
                         @endforeach
                     ]
                 }]

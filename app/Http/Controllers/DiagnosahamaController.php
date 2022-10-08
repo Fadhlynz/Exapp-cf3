@@ -159,7 +159,7 @@ class DiagnosahamaController extends Controller
       if($result['cf_max'] == null) {
       return back()->with('status', 'Silahkan Pilih Salah Satu Kondisi dari Gejala Hama');
     }
-
+ 
     $riwayat = Hasilhama::create([
       'nama' => $request->name,
       'id_hama' => $result['id_hama'],

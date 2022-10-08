@@ -25,8 +25,8 @@ class DashboardController extends Controller
             'count_hama' => Hama::count(),
             'count_penyakit' => Penyakit::count(),
             'count_value' => Value::count(),
-            'hasilhamas' => Hasilhama::orderby('id','desc')->get(),
             'hamas' => Hama::all(),
+            'hasilhamas' => Hasilhama::orderby('id','desc')->get(),
             'hasilpenyakits' => Hasilpenyakit::orderby('id','desc')->get(),
             'penyakits' => Penyakit::all(),
         ]);
