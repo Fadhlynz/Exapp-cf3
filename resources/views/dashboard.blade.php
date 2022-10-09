@@ -295,11 +295,11 @@
                 datasets: [{
                     label: 'Hama',
                     backgroundColor: [
-                        chartColors.red,
+                        chartColors.blue,
                         chartColors.orange,
                         chartColors.yellow,
                         chartColors.green,
-                        chartColors.blue,
+                        chartColors.red,
                         chartColors.indigo,
                         chartColors.violet,
                     ],

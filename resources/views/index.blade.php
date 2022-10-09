@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <div class="col-lg-6 hero-img" data-aos="fade-up" data-aos-delay="500">
                     <img src="{{ asset('flex-start/img/farmer.png') }}" class="img-fluid" alt="">
                 </div>
             </div>
