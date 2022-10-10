@@ -34,10 +34,10 @@ class HasilhamaController extends Controller
     public function destroy($id)
     {
       $hama = Hasilhama::find($id); 
-       $destination = 'storage/downloads/' . $hama->file_pdf;
-       if (File::exists($destination)) {
-       File::delete($destination);
-       }
+      $destination = 'storage/downloads/' . $hama->file_pdf;
+      if (File::exists($destination)) {
+      File::delete($destination);
+      }
       Hasilhama::where('id',$id)->delete();
       return redirect()->route('riwayatdiagnosa-hama')->with('status', 'Data Berhasil Dihapus!');
     }

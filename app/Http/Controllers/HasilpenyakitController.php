@@ -12,12 +12,10 @@ class HasilpenyakitController extends Controller
       public function index()
       {
       $penyakits = Penyakit::all();
-      $riwayat = Hasilpenyakit::with('penyakit') 
-      ->latest()
-      ->paginate(10);
+      $riwayat = Hasilpenyakit::all();
       return view('riwayatdiagnosa.penyakit', [
       'title' => 'Riwayat Diagnosa penyakit',
-      'riwayats' => $riwayat,
+      'riwayats' => $riwayat, 
       'penyakits' => $penyakits
       ]);
       } 

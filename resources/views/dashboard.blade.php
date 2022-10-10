@@ -85,8 +85,41 @@
             </div>
         </section>
 
-        {{-- Data Hama --}}
+         {{-- Grafik Riwayat Data Hama & Penyakit --}}
         <section class="row">
+            <div class="col-12 col-lg-12">
+                <div class="row">
+                    <h3>Grafik Riwayat Data Diagnosa</h3>
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Grafik Riwayat Data Penyakit</h4>
+                            </div>
+                            <div class="card-body px-3 py-0-5">
+                                <div class="row">
+                                    <canvas id="barPenyakit"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Grafik Riwayat Data Hama</h4>
+                            </div>
+                            <div class="card-body px-3 py-0-5">
+                                <div class="row">
+                                    <canvas id="barHama"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- Data Hama --}}
+        {{--  <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
                     <h3>Riwayat Data Hama</h3>
@@ -145,10 +178,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>  --}}
 
         {{-- Data Penyakit --}}
-        <section class="row">
+        {{--  <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
                     <h3>Riwayat Data Penyakit</h3>
@@ -160,7 +193,7 @@
                             <div class="card-body px-3 py-0-5">
                                 <div class="row">
                                     <div class="table-responsive">
-                                        <table class="table table-striped" id="table">
+                                        <table class="table table-striped" id="tablePenyakit">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -209,7 +242,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>  --}}
     </div>
 
     {{--  Grafik Hama  --}}

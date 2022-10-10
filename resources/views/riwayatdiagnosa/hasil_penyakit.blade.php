@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="page-content">
-        <section class="section">
+        <section class="section"> 
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ $title }}</h4>
@@ -37,7 +37,7 @@
                                     ({{ $diagnosa['code_penyakit'] }})
                                 </h6>
                             </div>
-                            <table class="table table-hover">
+                            <table class="table table-hover" id="table">
                                 <thead class="thead-light">
                                     <tr>
                                         <th>Gejala</th>

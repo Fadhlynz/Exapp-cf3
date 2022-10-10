@@ -37,7 +37,7 @@
                                     ({{ $diagnosa['code_hama'] }})
                                 </h6>
                             </div>
-                            <table class="table table-hover">
+                            <table class="table table-hover" id="table">
                                 <thead class="thead-light">
                                     <tr>
                                         <th>Gejala</th>
