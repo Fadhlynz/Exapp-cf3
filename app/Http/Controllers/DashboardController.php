@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Gejalahama;
 use App\Models\Hama;
 use App\Models\Hasilhama;
 use App\Models\Hasilpenyakit;
 use App\Models\User;
-use App\Models\History;
-use App\Models\Kondisihama;
 use App\Models\Penyakit;
 use App\Models\Setting;
 use App\Models\Value;
@@ -39,7 +36,7 @@ class DashboardController extends Controller
             'setting' => Setting::find(1),
         ]);
     } 
- 
+
     public function about()
     {
         return view('about',[
