@@ -116,7 +116,7 @@
                     @endforeach
                 ],
                 datasets: [{
-                    label: 'Data Hama',
+                    label: 'Data Penyakit',
                     backgroundColor: chartColors.blue,
                     data: [
                         @foreach ($penyakits as $penyakit)
@@ -130,7 +130,7 @@
                 barRoundness: 1,
                 title: {
                     display: true,
-                    text: "Grafik Hama"
+                    text: "Grafik Penyakit"
                 },
                 legend: {
                     display: false

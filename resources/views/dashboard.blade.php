@@ -108,7 +108,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                                 @forelse ($hasilhamas as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
@@ -213,7 +212,7 @@
         </section>
     </div>
 
-    Grafik Hama
+    {{--  Grafik Hama  --}}
     <script src="{{ asset('mazer/vendors/chartjs/Chart.min.js') }}"></script>
     <script>
         var chartColors = {
