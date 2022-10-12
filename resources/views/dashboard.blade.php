@@ -85,27 +85,15 @@
             </div>
         </section>
 
-         {{-- Grafik Riwayat Data Hama & Penyakit --}}
+        {{-- Diagram Lingkaran Data Hama & Penyakit --}}
         <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
-                    <h3>Grafik Riwayat Data Diagnosa</h3>
+                    <h3>Diagram Lingkaran Riwayat Data Diagnosa</h3>
                     <div class="col-12 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Grafik Riwayat Data Penyakit</h4>
-                            </div>
-                            <div class="card-body px-3 py-0-5">
-                                <div class="row">
-                                    <canvas id="barPenyakit"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Grafik Riwayat Data Hama</h4>
+                                <h4 class="card-title">Diagram Lingkaran Riwayat Data Hama</h4>
                             </div>
                             <div class="card-body px-3 py-0-5">
                                 <div class="row">
@@ -114,6 +102,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Diagram Lingkaran Riwayat Data Penyakit</h4>
+                            </div>
+                            <div class="card-body px-3 py-0-5">
+                                <div class="row">
+                                    <canvas id="barPenyakit"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
