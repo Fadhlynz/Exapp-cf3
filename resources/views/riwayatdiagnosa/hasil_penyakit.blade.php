@@ -72,11 +72,11 @@
                             <h5 class="font-weight-bold">Kesimpulan</h5>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Berdasarkan dari gejala yang kamu pilih atau alami juga berdasarkan Role/Basis aturan
+                                    <p>Berdasarkan dari gejala yang pengguna pilih dan berdasarkan Rules/Aturan
                                         yang
-                                        sudah ditentukan oleh seorang pakar penyakit maka perhitungan Algoritma Certainty
+                                        sudah ditentukan oleh seorang pakar maka perhitungan Algoritma Certainty
                                         Factor
-                                        mengambil nilai CF yang paling pinggi yakni
+                                        mengambil nilai CF yang paling tinggi yakni
                                         <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }}
                                             ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu
                                         <b>{{ unserialize($riwayat->cf_max)[2] }}</b>
