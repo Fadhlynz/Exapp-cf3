@@ -20,7 +20,7 @@ class DataHamaSeeder extends Seeder
         'name' => 'Hama Lalat Bibit',
         'det_hama' => 'Hama lalat bibit ini merupakan serangga yang baru menetas dan biasanya menyerang dengan cara membuat atau melubangi batang tanaman jagung dan memakannya sampai ke dasar batang dari tanaman jagung itu sendiri.',
         'srn_hama' => 'Pengendalian secara kimiawi menggunakan insektisida karbofuran saat tanam atau diberikan pada kuncup daun pada umur tanaman satu minggu dengan dosis 0,24 kg bahan aktif/ha. Pengendalian dengan insektisida dapat dilakukan dengan perlakuan benih, yaitu Thiodikarb dengan dosis 7,5-15 g b.a. (bahan aktif)/ kg benih atau karbofuran dengan dosis 6 g b.a./ kg benih. Selanjutnya setelah tanaman berumur 5-7 hari, disemprot dengan karbosulfan dengan dosis 0,2 kg b.a. penggunaan insektisida hanya dianjurkan di daerah endemik.',
-        'images' => '1660404549.png',
+        'images' => '1666678186.png',
         ]);
         Hama::create([
         'user_id' => 2,
