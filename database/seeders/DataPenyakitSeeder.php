@@ -27,7 +27,14 @@ class DataPenyakitSeeder extends Seeder
       'user_id' => 1,
       'code' => 'P2',
       'name' => 'Penyakit Bulai (Peronosclerospora maydis)',
-      'det_penyakit' => '1) Penggunaan varietas tahan. 2) Penerapan pola tanam dan pergiliran tanaman. 4) Sanitasi lingkungan pertanaman jagung. 3) Rotasi tanaman dengan tujuan untuk memutus ketersediaan inokulum bulai dengan menanam tanaman dari bukan sereal. 4) Eradikasi tanaman yang terserang bulai. 5) Penggunaan fungisida sebagai perlakuan benih (seed treatment) untuk mencegah terjadinya infeksi bulai lebih awal.',
+      'det_penyakit' => 'Penyakit bulai (downy mildew) merupakan penyakit utama bagi tanaman jagung. Serangan penyakit
+      ini mulai terjadi umur dua minggu setelah tanam. penyakit bulai apabila tidak tertangani dengan baik akan
+      menyebabkan kehilangan hasil sampai 100%. Peningkatan suhu dan kelembaban diperkirakan akan semakin mempercepat
+      perkembangbiakan dan penyebaran spora bulai melalui media udara, tanah ataupun benih. Ciri umum yang ditimbulkan
+      dari serangan bulai adalah munculnya butiran putih pada daun yang merupakan spora cendawan pathogen. Penyakit
+      bulai yang disebabkan oleh cendawan Peronosclerospora maydis, P. Spora javanica dan P. Spora philippinensis. Masa
+      kritis tanaman jagung terserang bulai mulai benih ditanam sampai dengan umur 40 hari.',
+      'srn_penyakit' => '1) Penggunaan varietas tahan. 2) Penerapan pola tanam dan pergiliran tanaman. 4) Sanitasi lingkungan pertanaman jagung. 3) Rotasi tanaman dengan tujuan untuk memutus ketersediaan inokulum bulai dengan menanam tanaman dari bukan sereal. 4) Eradikasi tanaman yang terserang bulai. 5) Penggunaan fungisida sebagai perlakuan benih (seed treatment) untuk mencegah terjadinya infeksi bulai lebih awal.',
       'images' => '1662961340.png',
     ]);
     Penyakit::create([
