@@ -37,7 +37,7 @@ class DataHamaSeeder extends Seeder
         'images' => '1666678186.png',
         ]);
         Hama::create([
-        'user_id' => 2,
+        'user_id' => 1,
         'code' => 'H2',
         'name' => 'Hama Ulat Grayak (Spodoptera frugiperda.)',
         'det_hama' => 'Ulat Grayak merupakan salah satu hama yang menyerang tanaman jagung. Ulat ini tidak berbulu dan
@@ -47,6 +47,11 @@ class DataHamaSeeder extends Seeder
         migrasi tinggi di mana imago mampu terbang 100 km/malam dan 500 km sebelum meletakkan telurnya. Dengan bantuan
         angin, larva mampu menginvasi tanaman budidaya di sebelahnya. Ulat grayak umumnya menyerang pada malam hari,
         sedangkan pada siang hari ulat ini bersembunyi di bawah tanaman, mulsa atau dalam tanah.',
+        'srn_hama' => '1) Secara mekanis, dapat dilakukan adalah dengan cara mencari dan membunuh larva dan telur hama
+        ini secara mekanis, yakni dengan dihancurkan dengan tangan. 2) Secara biologis, dengan penggunaan musuh alami
+        yang berperan sebagai agen pengendali hayati untuk mengurangi populasi hama ulat grayak. Beberapa contoh musuh
+        alami dari hama ini yaitu jenis parasitoid Trichogramma spp. dan jenis predator cecopet, kumbang kepik, dan
+        semut. ',
         'images' => '1660404567.jpg',
         ]);
         Hama::create([
@@ -64,14 +69,18 @@ class DataHamaSeeder extends Seeder
         menetas berwarna putih kekuning-kuningan, makan berpindah pindah, larva muda makan pada bagian alur bunga
         jantan, setelah instar lanjut menggerek batang, umur larva 17-30 hari. 4) Pupa, pupa biasanya terbentuk di dalam
         batang, berwarna coklat kemerah merahan, umur pupa 6-9 hari.',
+        'srn_hama' => '1) Waktu tanam yang serentak. 2) Tumpangsari jagung dengan kedelai atau kacang tanah. 3) Pengolahan
+        tanah yang baik ',
         'images' => '1663384944.png',
         ]);
         Hama::create([
-        'user_id' => 2,
+        'user_id' => 1,
         'code' => 'H4',
         'name' => 'Hama Penggerek Tongkol (Helicoverpa armigera)',
         'det_hama' => 'Hama penggerek tongkol (Helicoverpa armigera) merupakan serangga dari kelompok ngengat yang
         larvanya menjadi salah satu hama yang menyebabkan kerusakan pada buah tanaman jagung.',
+        'srn_hama' => 'Pengolahan tanah secara sempurna akan merusak pupa yang terbentuk dalam tanah dan dapat
+        mengurangi populasi H. armigera generasi berikutnya.',
         'images' => '1660404676.png',
         ]);
         Hama::create([
@@ -82,6 +91,8 @@ class DataHamaSeeder extends Seeder
         membentuk koloni yang besar pada daun. Betina berproduksi secara partenoge nesis (tanpa kawin). Umumnya, stadia
         nimfa terdiri atas empat instar (Kring 1985). Stadium nimfa terjadi selama 16 hari pada suhu 15°C, sembilan hari
         pada suhu 20°C, dan lima hari pada suhu 30°C.',
+        'srn_hama' => 'Melakukan penanaman jagung secara polikultur karena akan meningkatkan predasi dari predator
+        kutu daun dibandingkan dengan penanaman secara monokultur.',
         'images' => '1660404689.png',
         ]);
     }

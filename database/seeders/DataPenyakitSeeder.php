@@ -18,25 +18,16 @@ class DataPenyakitSeeder extends Seeder
       'user_id' => 1,
       'code' => 'P1',
       'name' => 'Penyakit Hawar Daun (Exserohilum turcicum)',
-      'det_penyakit' => 'Hawar daun Exserohilum turcicum (Pass.) Leonard et Suggs merupakan penyakit pada tanaman jagung
-      yang disebabkan oleh jamur E. turcicum (Pass.) Leonard et Suggs, jamur membentuk konidiofor yang keluar dari mulut
-      daun (stomata), satu atau dua dalam kelompok, lurus atau lentur, berwarna coklat, panjangnya sampai 300 µm, tebal
-      7-11 µm, secara umum 8-9 µm. Konidium lurus atau agak melengkung, jorong atau berbentuk gada terbalik, pucat atau
-      berwarna coklat jerami, halus mempunyai 4-9 sekat palsu, panjang 50-144 (115) µm, dan bagian yang paling lebar
-      berukuran 18-33 µm, kebanyakan 20-24 µm.',
+      'det_penyakit' => 'Hawar daun Exserohilum turcicum (Pass.) Leonard et Suggs merupakan penyakit pada tanaman jagung yang disebabkan oleh jamur E. turcicum (Pass.) Leonard et Suggs, jamur membentuk konidiofor yang keluar dari mulut daun (stomata), satu atau dua dalam kelompok, lurus atau lentur, berwarna coklat, panjangnya sampai 300 µm, tebal 7-11 µm, secara umum 8-9 µm. Konidium lurus atau agak melengkung, jorong atau berbentuk gada terbalik, pucat atau berwarna coklat jerami, halus mempunyai 4-9 sekat palsu, panjang 50-144 (115) µm, dan bagian yang paling lebar berukuran 18-33 µm, kebanyakan 20-24 µm.',
+      'srn_penyakit' => '1) Penggunaan varietas tahan. Penanaman varietas tahan merupakan cara pengendalian yang mudah, murah, dan aman bagi lingkungan. 2) Sanitasi lingkungan. E. turcicum selain menginfeksi tanaman jagung, juga dapat merusak beberapa jenis gulma atau tanaman inang alternatif. Oka (1993) mengemukakan bahwa untuk mengendalikan penyakit tanaman, maka sumber inokulum awal (X) harus dihilangkan/dikurangi. Pengolahan tanah yang baik dan penyiangan yang sempurna dapat menekan/mengurangi sumber inokulum awal.
+      3) Budi daya. Pengaturan jarak tanam juga dapat mengendalikan E. turcicum. Jarak tanam yang rapat menyebabkan kelembaban udara di sekitar tanaman menjadi lebih tinggi dan suhu menjadi optimal bagi perkembangan E. turcicum. 4) Fungisida. Jika diperlukan, penyakit ini dapat dikendalikan dengan fungisida dengan bahan aktif carbendazin 6,2% + mancozeb 73,8%, mancozeb 80%, trishloromethylthio-4-cyclohexene-1,2-dicarboximide. 5) Perlakuan benih. Jamur yang terbawa oleh biji dapat dimatikan dengan thiram dan karboxin, atau perlakuan udara panas selama 17 menit pada suhu 54-55°C.',
       'images' => '1662959733.png',
     ]);
     Penyakit::create([
       'user_id' => 1,
       'code' => 'P2',
       'name' => 'Penyakit Bulai (Peronosclerospora maydis)',
-      'det_penyakit' => 'Penyakit bulai (downy mildew) merupakan penyakit utama bagi tanaman jagung. Serangan penyakit
-      ini mulai terjadi umur dua minggu setelah tanam. penyakit bulai apabila tidak tertangani dengan baik akan
-      menyebabkan kehilangan hasil sampai 100%. Peningkatan suhu dan kelembaban diperkirakan akan semakin mempercepat
-      perkembangbiakan dan penyebaran spora bulai melalui media udara, tanah ataupun benih. Ciri umum yang ditimbulkan
-      dari serangan bulai adalah munculnya butiran putih pada daun yang merupakan spora cendawan pathogen. Penyakit
-      bulai yang disebabkan oleh cendawan Peronosclerospora maydis, P. Spora javanica dan P. Spora philippinensis. Masa
-      kritis tanaman jagung terserang bulai mulai benih ditanam sampai dengan umur 40 hari.',
+      'det_penyakit' => '1) Penggunaan varietas tahan. 2) Penerapan pola tanam dan pergiliran tanaman. 4) Sanitasi lingkungan pertanaman jagung. 3) Rotasi tanaman dengan tujuan untuk memutus ketersediaan inokulum bulai dengan menanam tanaman dari bukan sereal. 4) Eradikasi tanaman yang terserang bulai. 5) Penggunaan fungisida sebagai perlakuan benih (seed treatment) untuk mencegah terjadinya infeksi bulai lebih awal.',
       'images' => '1662961340.png',
     ]);
     Penyakit::create([
@@ -52,12 +43,12 @@ class DataPenyakitSeeder extends Seeder
       yang mampu menembus masuk ke jaringan tanaman. spora yang terbawa oleh angin dapat menginfeksi ke tongkol jagung.
       dan biji jagung yang terinfeksi apabila ditanam dapat menyebabkan penyakit busuk batang.',
       'srn_penyakit' => '1) Pengendalian Hayati: Larutan berbasis bakteri Pseudomonas fluorescens dapat digunakan
-        sebagai perlakuan benih dan sebagai semprotan untuk mengurangi timbulnya penyakit, dan produksi racun.
-        2) Pengendalian Kimiawi: Selalu pertimbangkan pendekatan terpadu berupa tindakan pencegahan bersama dengan
-        perlakuan hayati jika tersedia. Fungisida yang diberikan awal musim dapat membatasi infeksi tongkol. Karena
-        kerusakan terjadi di tongkol, fungisida bukan cara paling efektif untuk melawan penyakit ini. Pertimbangkan
-        untuk mengendalikan hama serangga yang melukai tongkol dan mendukung pertumbuhan jamur. Produk yang mengandung
-        propikonazol 1 ml / I dapat digunakan pada tahap pengerasan biji untuk mengendalikan jamur.',
+      sebagai perlakuan benih dan sebagai semprotan untuk mengurangi timbulnya penyakit, dan produksi racun.
+      2) Pengendalian Kimiawi: Selalu pertimbangkan pendekatan terpadu berupa tindakan pencegahan bersama dengan
+      perlakuan hayati jika tersedia. Fungisida yang diberikan awal musim dapat membatasi infeksi tongkol. Karena
+      kerusakan terjadi di tongkol, fungisida bukan cara paling efektif untuk melawan penyakit ini. Pertimbangkan
+      untuk mengendalikan hama serangga yang melukai tongkol dan mendukung pertumbuhan jamur. Produk yang mengandung
+      propikonazol 1 ml / I dapat digunakan pada tahap pengerasan biji untuk mengendalikan jamur.',
       'images' => '1662961206.png',
     ]);
     Penyakit::create([
