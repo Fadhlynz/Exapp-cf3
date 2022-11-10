@@ -14,7 +14,7 @@
                     <table class="table table-hover border">
                         <thead class="thead-light">
                             <tr>
-                                <th>Gejala yang kamu alami saat ini</th>
+                                <th>Gejala yang tanaman kamu alami saat ini</th>
                                 <th>Tingkat keyakinan</th>
                                 <th>CF User</th>
                             </tr>
