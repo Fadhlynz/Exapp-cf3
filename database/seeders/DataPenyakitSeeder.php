@@ -34,21 +34,9 @@ class DataPenyakitSeeder extends Seeder
       'user_id' => 1,
       'code' => 'P3',
       'name' => 'Penyakit Busuk Batang (Fusarium)',
-      'det_penyakit' => 'Penyakit busuk batang adalah penyakit pada tanaman jagung yang disebabkan oleh cendawan patogen
-      yang memproduksi konidia. Konidia ini kemudian akan menyebar oleh hembusan angin, air hujan, maupun serangga. Pada
-      saat lahan tidak ada tanaman, cendawan penyebab penyakit dapat bertahan pada sisa-sisa tanaman yang terinfeksi
-      dalam fase hifa atau piknidia dan peritesia yang berisi spora. Jika kondisi lingkungan mendukung, maka spora akan
-      keluar dari piknidia atau peritesia. Spora yang menempel pada permukaan tanaman jagung akan tumbuh dan menginfeksi
-      tanaman melalui akar atau pangkal batang. proses infeksi awal dapat melalui luka atau membentuk sejenis apresoria
-      yang mampu menembus masuk ke jaringan tanaman. spora yang terbawa oleh angin dapat menginfeksi ke tongkol jagung.
-      dan biji jagung yang terinfeksi apabila ditanam dapat menyebabkan penyakit busuk batang.',
-      'srn_penyakit' => '1) Pengendalian Hayati: Larutan berbasis bakteri Pseudomonas fluorescens dapat digunakan
-      sebagai perlakuan benih dan sebagai semprotan untuk mengurangi timbulnya penyakit, dan produksi racun.
-      2) Pengendalian Kimiawi: Selalu pertimbangkan pendekatan terpadu berupa tindakan pencegahan bersama dengan
-      perlakuan hayati jika tersedia. Fungisida yang diberikan awal musim dapat membatasi infeksi tongkol. Karena
-      kerusakan terjadi di tongkol, fungisida bukan cara paling efektif untuk melawan penyakit ini. Pertimbangkan
-      untuk mengendalikan hama serangga yang melukai tongkol dan mendukung pertumbuhan jamur. Produk yang mengandung
-      propikonazol 1 ml / I dapat digunakan pada tahap pengerasan biji untuk mengendalikan jamur.',
+      'det_penyakit' => 'Penyakit busuk batang adalah penyakit pada tanaman jagung yang disebabkan oleh cendawan patogen yang memproduksi konidia. Konidia ini kemudian akan menyebar oleh hembusan angin, air hujan, maupun serangga. Pada saat lahan tidak ada tanaman, cendawan penyebab penyakit dapat bertahan pada sisa-sisa tanaman yang terinfeksi dalam fase hifa atau piknidia dan peritesia yang berisi spora. Jika kondisi lingkungan mendukung, maka spora akan keluar dari piknidia atau peritesia. Spora yang menempel pada permukaan tanaman jagung akan tumbuh dan menginfeksi tanaman melalui akar atau pangkal batang. proses infeksi awal dapat melalui luka atau membentuk sejenis apresoria yang mampu menembus masuk ke jaringan tanaman. spora yang terbawa oleh angin dapat menginfeksi ke tongkol jagung. dan biji jagung yang terinfeksi apabila ditanam dapat menyebabkan penyakit busuk batang.',
+      'srn_penyakit' => '1) Menanam varietas tahan. 2) Pergiliran tanaman yang tidak termasuk inang. 3) Pemupukan berimbang, menghindari pemberian pupuk N dengan takaran tinggi dan pupuk K dengan takaran rendah,
+      populasi tanaman rendah (Shurtleff 1980). 4) Drainase yang baik dan pemberian air juga baik (Wakman et al. 1998).',
       'images' => '1662961206.png',
     ]);
     Penyakit::create([
