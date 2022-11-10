@@ -16,78 +16,85 @@ class GejalaHamaSeeder extends Seeder
     {
       Gejalahama::create([
       'code' => 'GH01',
-      'name' => 'Bentuk daun berlubang-lubang atau rusak',
+      'name' => 'Warna daun berubah menjadi kekuningan',
       ]);
       Gejalahama::create([
       'code' => 'GH02',
-      'name' => 'Aktivitas hama ini hanya berlangsung pada musim hujan selama 1-2 bulan',
+      'name' => 'Terdapat bekas gigitan di bagian daun atau pucuk daun',
       ]);
       Gejalahama::create([
       'code' => 'GH03',
-      'name' => 'Larva yang baru menetas melubangi batang, kemudian membuat terowongan hingga ke dasar batang
-      sehingga tanaman menjadi kuning dan akhirnya',
+      'name' => 'Pada daun tanaman yang masih muda akan terlihat menggulung',
       ]);
       Gejalahama::create([
       'code' => 'GH04',
-      'name' => 'Pertumbuhan terlambat, menguning, jaringan membusuk atau gejala sundep',
+      'name' => 'Tanaman menjadi kerdil',
       ]);
       Gejalahama::create([
       'code' => 'GH05',
-      'name' => 'Jika tanaman mengalami penyembuhan, maka pertumbuhannya akan kerdil.',
+      'name' => 'Titik tumbuh layu dan bila bagian yang layu dicabut akan mudah lepas serta kelihatan membusuk',
       ]);
       Gejalahama::create([
       'code' => 'GH06',
-      'name' => 'Larva kecil merusak daun serta serentak bergerombol dengan meninggalkan sisa-sisa epidermis
-      bagian atas, bahkan hanya menyisakan tulang daunnya saja',
+      'name' => 'Adanya bekas gesekan dari larva atau ulat',
       ]);
       Gejalahama::create([
       'code' => 'GH07',
-      'name' => 'Biasanya larva berada di permukaan bawah daun',
+      'name' => 'Pada permukaan atas daun atau di sekitar pucuk tanaman jagung, ditemukan serbuk kasar seperti serbuk
+      gergaji.',
       ]);
       Gejalahama::create([
       'code' => 'GH08',
-      'name' => 'Umumnya hama muncul pada saat musim kemarau daun',
+      'name' => 'Terdapat kerusakan pada bagian pucuk, daun muda, lalu menyebabkan tanaman jagung dipastikan akan
+      mati.',
       ]);
       Gejalahama::create([
       'code' => 'GH09',
-      'name' => 'Membuat lubang kecil pada daun',
+      'name' => 'Terdapat kerusakan bagian tongkol jagung',
       ]);
       Gejalahama::create([
       'code' => 'GH10',
-      'name' => 'Membuat lubang gorokan pada batang, bunga jantan atau pangkal tongkol, sehingga batang tassel
-      mudah patah',
+      'name' => 'Tampak lubang gerekan pada batang',
       ]);
       Gejalahama::create([
       'code' => 'GH11',
-      'name' => 'Terdapat kerusakan pada bagian tongkol',
+      'name' => 'Terdapat serbuk-serbuk gerek berwarna cokelat pada lubang gerekan.',
       ]);
       Gejalahama::create([
       'code' => 'GH12',
-      'name' => 'Larva yang baru menetas akan makan pada jambul tongkol, dan kemudian membuat lubang masuk ke
-      tongkol.',
+      'name' => 'Terdapat lubang gerek pada batang dapat menyebabkan batang tersebut mudah patah atau roboh.',
       ]);
       Gejalahama::create([
       'code' => 'GH13',
-      'name' => 'Kotoran yang ditinggalkan larva menyebabkan bertumbuhnya jamur yang menghasilkan mikotoksin sehingga
-      tongkol rusak.',
+      'name' => 'Adanya lubang melintang pada daun tanaman stadia vegetatif',
       ]);
       Gejalahama::create([
       'code' => 'GH14',
-      'name' => 'Hama ini menyerang tanaman muda, terutama pada pucuk atau malai yang. Dapat mengakibatkan tidak
-      terbentuknya bunga jantan, berkurangnya hasil dan bahkan tanaman dapat mati',
+      'name' => 'Adanya rambut tongkol jagung yang terpotong',
       ]);
       Gejalahama::create([
       'code' => 'GH15',
-      'name' => 'Hama ini menyerang bagian daun terlebih dahulu, kemudian tulang daun dan batang',
+      'name' => 'Terdapat bekas gerekan pada tongkol',
       ]);
       Gejalahama::create([
       'code' => 'GH16',
-      'name' => 'Menyerang mulai dari tepi daun',
+      'name' => 'Terdapat larva pada tongkol jagung',
       ]);
       Gejalahama::create([
       'code' => 'GH17',
-      'name' => 'Hama ini dapat pula memakan batang dan tongkol jagung jika populasinya sangat tinggi dengan sumber
-      makanan terbatas',
+      'name' => 'Hama ini menyerap cairan daun dan batang tanaman',
+      ]);
+      Gejalahama::create([
+      'code' => 'GH18',
+      'name' => 'Warna dan bentuk daun menjadi tidak normal',
+      ]);
+      Gejalahama::create([
+      'code' => 'GH19',
+      'name' => 'Tanaman jagung menjadi kering',
+      ]);
+      Gejalahama::create([
+      'code' => 'GH20',
+      'name' => 'Adanya embun jelaga berwarna hitam yang menutupi daun',
       ]);
     }
 }
