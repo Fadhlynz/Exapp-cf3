@@ -21,7 +21,7 @@ class DataPenyakitSeeder extends Seeder
       'det_penyakit' => 'Hawar daun Exserohilum turcicum (Pass.) Leonard et Suggs merupakan penyakit pada tanaman jagung yang disebabkan oleh jamur E. turcicum (Pass.) Leonard et Suggs, jamur membentuk konidiofor yang keluar dari mulut daun (stomata), satu atau dua dalam kelompok, lurus atau lentur, berwarna coklat, panjangnya sampai 300 µm, tebal 7-11 µm, secara umum 8-9 µm. Konidium lurus atau agak melengkung, jorong atau berbentuk gada terbalik, pucat atau berwarna coklat jerami, halus mempunyai 4-9 sekat palsu, panjang 50-144 (115) µm, dan bagian yang paling lebar berukuran 18-33 µm, kebanyakan 20-24 µm.',
       'srn_penyakit' => '1) Penggunaan varietas tahan. Penanaman varietas tahan merupakan cara pengendalian yang mudah, murah, dan aman bagi lingkungan. 2) Sanitasi lingkungan. E. turcicum selain menginfeksi tanaman jagung, juga dapat merusak beberapa jenis gulma atau tanaman inang alternatif. Oka (1993) mengemukakan bahwa untuk mengendalikan penyakit tanaman, maka sumber inokulum awal (X) harus dihilangkan/dikurangi. Pengolahan tanah yang baik dan penyiangan yang sempurna dapat menekan/mengurangi sumber inokulum awal.
       3) Budi daya. Pengaturan jarak tanam juga dapat mengendalikan E. turcicum. Jarak tanam yang rapat menyebabkan kelembaban udara di sekitar tanaman menjadi lebih tinggi dan suhu menjadi optimal bagi perkembangan E. turcicum. 4) Fungisida. Jika diperlukan, penyakit ini dapat dikendalikan dengan fungisida dengan bahan aktif carbendazin 6,2% + mancozeb 73,8%, mancozeb 80%, trishloromethylthio-4-cyclohexene-1,2-dicarboximide. 5) Perlakuan benih. Jamur yang terbawa oleh biji dapat dimatikan dengan thiram dan karboxin, atau perlakuan udara panas selama 17 menit pada suhu 54-55°C.',
-      'images' => '1662959733.png',
+      'images' => '1668166929.png',
     ]);
     Penyakit::create([
       'user_id' => 1,
@@ -35,7 +35,7 @@ class DataPenyakitSeeder extends Seeder
       bulai yang disebabkan oleh cendawan Peronosclerospora maydis, P. Spora javanica dan P. Spora philippinensis. Masa
       kritis tanaman jagung terserang bulai mulai benih ditanam sampai dengan umur 40 hari.',
       'srn_penyakit' => '1) Penggunaan varietas tahan. 2) Penerapan pola tanam dan pergiliran tanaman. 4) Sanitasi lingkungan pertanaman jagung. 3) Rotasi tanaman dengan tujuan untuk memutus ketersediaan inokulum bulai dengan menanam tanaman dari bukan sereal. 4) Eradikasi tanaman yang terserang bulai. 5) Penggunaan fungisida sebagai perlakuan benih (seed treatment) untuk mencegah terjadinya infeksi bulai lebih awal.',
-      'images' => '1662961340.png',
+      'images' => '1668166991.png',
     ]);
     Penyakit::create([
       'user_id' => 1,
@@ -44,7 +44,7 @@ class DataPenyakitSeeder extends Seeder
       'det_penyakit' => 'Penyakit busuk batang adalah penyakit pada tanaman jagung yang disebabkan oleh cendawan patogen yang memproduksi konidia. Konidia ini kemudian akan menyebar oleh hembusan angin, air hujan, maupun serangga. Pada saat lahan tidak ada tanaman, cendawan penyebab penyakit dapat bertahan pada sisa-sisa tanaman yang terinfeksi dalam fase hifa atau piknidia dan peritesia yang berisi spora. Jika kondisi lingkungan mendukung, maka spora akan keluar dari piknidia atau peritesia. Spora yang menempel pada permukaan tanaman jagung akan tumbuh dan menginfeksi tanaman melalui akar atau pangkal batang. proses infeksi awal dapat melalui luka atau membentuk sejenis apresoria yang mampu menembus masuk ke jaringan tanaman. spora yang terbawa oleh angin dapat menginfeksi ke tongkol jagung. dan biji jagung yang terinfeksi apabila ditanam dapat menyebabkan penyakit busuk batang.',
       'srn_penyakit' => '1) Menanam varietas tahan. 2) Pergiliran tanaman yang tidak termasuk inang. 3) Pemupukan berimbang, menghindari pemberian pupuk N dengan takaran tinggi dan pupuk K dengan takaran rendah,
       populasi tanaman rendah (Shurtleff 1980). 4) Drainase yang baik dan pemberian air juga baik (Wakman et al. 1998).',
-      'images' => '1662961206.png',
+      'images' => '1668167000.png',
     ]);
     Penyakit::create([
       'user_id' => 1,
@@ -68,7 +68,7 @@ class DataPenyakitSeeder extends Seeder
       Rhizoctonia Solani Fungus. sp. Sasaki Exner.',
       'srn_penyakit' => '1) Penanaman varietas tahan pada musim hujan. 2) Penanaman jagung sebaiknya pada musim kemarau. 3) Penanaman varietas yang letak tongkolnya tinggi. 4) Membuang (merompes) daun yang berada di bawah tongkol yang
       pelepahnya telah tertular hawar upih (Sudjono 1988). ',
-      'images' => '1662961233.png',
+      'images' => '1668167022.png',
     ]);
   }
 }

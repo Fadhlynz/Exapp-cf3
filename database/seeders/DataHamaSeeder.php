@@ -34,7 +34,7 @@ class DataHamaSeeder extends Seeder
         dapat dilakukan dengan perlakuan benih, yaitu Thiodikarb dengan dosis 7,5-15 g b.a. (bahan aktif)/ kg benih atau
         karbofuran dengan dosis 6 g b.a./ kg benih. Selanjutnya setelah tanaman berumur 5-7 hari, disemprot dengan
         karbosulfan dengan dosis 0,2 kg b.a. penggunaan insektisida hanya dianjurkan di daerah endemik.',
-        'images' => '1666678186.png',
+        'images' => '1668166678.png',
         ]);
         Hama::create([
         'user_id' => 1,
@@ -52,7 +52,7 @@ class DataHamaSeeder extends Seeder
         yang berperan sebagai agen pengendali hayati untuk mengurangi populasi hama ulat grayak. Beberapa contoh musuh
         alami dari hama ini yaitu jenis parasitoid Trichogramma spp. dan jenis predator cecopet, kumbang kepik, dan
         semut. ',
-        'images' => '1660404567.jpg',
+        'images' => '1668166704.png',
         ]);
         Hama::create([
         'user_id' => 1,
@@ -71,7 +71,7 @@ class DataHamaSeeder extends Seeder
         batang, berwarna coklat kemerah merahan, umur pupa 6-9 hari.',
         'srn_hama' => '1) Waktu tanam yang serentak. 2) Tumpangsari jagung dengan kedelai atau kacang tanah. 3) Pengolahan
         tanah yang baik ',
-        'images' => '1663384944.png',
+        'images' => '1668166720.png',
         ]);
         Hama::create([
         'user_id' => 1,
@@ -81,7 +81,7 @@ class DataHamaSeeder extends Seeder
         larvanya menjadi salah satu hama yang menyebabkan kerusakan pada buah tanaman jagung.',
         'srn_hama' => 'Pengolahan tanah secara sempurna akan merusak pupa yang terbentuk dalam tanah dan dapat
         mengurangi populasi H. armigera generasi berikutnya.',
-        'images' => '1660404676.png',
+        'images' => '1668166767.png',
         ]);
         Hama::create([
         'user_id' => 1,
@@ -93,7 +93,7 @@ class DataHamaSeeder extends Seeder
         pada suhu 20°C, dan lima hari pada suhu 30°C.',
         'srn_hama' => 'Melakukan penanaman jagung secara polikultur karena akan meningkatkan predasi dari predator
         kutu daun dibandingkan dengan penanaman secara monokultur.',
-        'images' => '1660404689.png',
+        'images' => '1668166780.png',
         ]);
     }
 }
