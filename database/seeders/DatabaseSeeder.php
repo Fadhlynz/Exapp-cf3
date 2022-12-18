@@ -48,7 +48,6 @@ class DatabaseSeeder extends Seeder
         Value::create(['name' => 'Cukup', 'value' => 0.6]);
         Value::create(['name' => 'Kurang Yakin', 'value' => 0.4]);
         Value::create(['name' => 'Tidak Yakin', 'value' => 0.2]);
-        Value::create(['name' => 'Tidak Tahu', 'value' => 0.0]);
 
         Setting::create([
             'title' => 'Sistem Pakar Diagnosa Hama dan Penyakit pada Tanaman Jagung',
